@@ -1,0 +1,143 @@
+// Scaffolding
+// -------------------------
+body {
+	padding-top: 50px;
+	color: @textColor;
+	font-size: @baseFontSize;
+	background: @white;
+}
+a {
+	color: @linkColor;
+	&:hover, &:focus {
+		color: @linkColorHover;
+		text-decoration: none;
+	}
+}
+h1, h2, h3, h4, h5, h6 {
+	color: @baseHeadingColor;
+	font-weight: 300;
+}
+.muted {
+	color: @textColor;
+}
+
+// Sectioning
+// -------------------------
+.block {
+	width: 100%;
+}
+.block-small {
+	width: 100%;
+	padding: 20px 0;
+}
+.block-large {
+	width: 100%;
+	padding: 80px 0;
+}
+
+// Alternative styles
+// -------------------------
+.bg-alt {
+	background: @silver;
+	border-top: 1px solid darken(@silver, 5%);
+	border-bottom: 1px solid darken(@silver, 5%);
+	hr {
+		border-top-color: darken(@silver, 5%);;
+	}
+}
+
+// Reset lists (use FontAwesome instead)
+// -------------------------
+ul {
+	margin-left: 0;
+	li {
+		list-style: none;
+	}
+}
+
+// List - images (flickr, ads, etc).
+// -------------------------
+.list-img li {
+	display: inline-block;
+	margin: 0 5px 10px 0;
+}
+
+// List - hyperlinks (sidebar links)
+// -------------------------
+.list-links li {
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+	border-bottom: 1px solid #ddd;
+	span {
+		display: block;
+	}
+}
+
+// List - social media icons
+// -------------------------
+.list-social li {
+	display: inline;
+	text-align: center;
+	a {
+		display: inline-block;
+		width: 40px;
+		height: 40px;
+		color: #fff;
+		.border-radius(50%);
+		&:hover {
+			color: #fff;
+			text-decoration: none;
+		}
+		&.twitter {
+			background: @twitterColor;
+			&:hover {
+				background: darken(@twitterColor, 15%);
+			}
+		}
+		&.facebook {
+			background: @facebookColor;
+			&:hover {
+				background: darken(@facebookColor, 15%);
+			}
+		}
+		&.google-plus {
+			background: @googlePlusColor;
+			&:hover {
+				background: darken(@googlePlusColor, 15%);
+			}
+		}
+		&.pinterest {
+			background: @pinterestColor;
+			&:hover {
+				background: darken(@pinterestColor, 15%);
+			}
+		}
+		i {
+			padding-top: 13px;
+		}
+	}
+}
+
+// Spacer breaks
+// -------------------------
+br[class*="spacer"] {
+	display: block;
+	content: " ";
+}
+.spacer-small {
+	margin-bottom: 10px;
+	line-height: 10px; // IE
+}
+.spacer-medium {
+	margin-bottom: 20px;
+	line-height: 20px; // IE
+}
+.spacer-large {
+	margin-bottom: 40px;
+	line-height: 40px; // IE
+}
+.spacer-xlarge {
+	margin-bottom: 80px;
+	line-height: 80px; // IE
+}
+

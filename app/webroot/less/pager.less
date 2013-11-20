@@ -1,0 +1,30 @@
+// Pager
+// -------------------------
+
+// Let's make this quick and easy
+// make it look like a button
+@pagerColor: @btnBackground;
+
+// and forget about the rest
+.pager li > a,
+.pager li > span {
+	padding: 11px 19px;
+	font-size: @baseFontSize * 1.25;
+	background-color: @pagerColor;
+	border: 1px solid #ddd;
+	color: @white;
+	.border-radius(3px);
+}
+.pager li > a:hover,
+.pager li > a:focus {
+	text-decoration: none;
+	background-color: lighten(@pagerColor, 5%);
+}
+.pager .disabled > a,
+.pager .disabled > a:hover,
+.pager .disabled > a:focus,
+.pager .disabled > span {
+	color: lighten(@pagerColor, 40%);
+	background-color: lighten(@pagerColor, 20%);
+	cursor: default;
+}

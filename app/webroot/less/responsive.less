@@ -1,0 +1,39 @@
+
+@media (max-width: 979px) {
+	body {
+		padding-top: 0;
+	}
+	.nav-collapse {
+		// Navbar links
+		& .nav > li a:hover {
+			background-color: @navbarActiveBackground;
+		}
+		// Submenu links
+		& .dropdown-menu a {
+			color: @navbarLinkColor;
+		}
+	}
+	.navbar .nav > li > a:hover,
+	.navbar .nav > li > a:focus {
+		color: @navbarLinkColor;
+	}
+	.navbar {
+		margin-bottom: 0;
+	}
+}
+
+@media (max-width: 768px) {
+	// full width sections
+	.block, .block-small, .block-large {
+		margin-left: -20px;
+		margin-right: -20px;
+		padding-left: 20px;
+		padding-right: 20px;
+		text-align: center;
+	}
+	.form-signup {
+		input, button {
+			margin: 5px 0;
+		}
+	}
+}

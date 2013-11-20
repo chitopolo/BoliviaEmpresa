@@ -1,0 +1,50 @@
+// Fancy inputs
+// Nearly all possible inputs are pre-styled to fit with this theme
+// -------------------------
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+input[type="radio"],
+input[type="checkbox"] {
+	height: 35px;
+}
+select {
+	height: 40px;
+}
+label {
+	line-height: 45px;
+}
+.form-horizontal .control-label {
+	padding-top: 0;
+}
+
+// prepended and appended inputs
+.input-append .add-on,
+.input-prepend .add-on {
+	height: 35px;
+	line-height: 35px;
+}
+// btn dropdown color
+.btn-group.open .btn.dropdown-toggle {
+	background-color: @btnBackgroundHighlight;
+}
+// btn dropdown caret color
+.caret {
+	border-top-color: @white;
+}
+// btn dropdown divider color
+.dropdown-menu .divider {
+	background-color: @complementaryColorDark;
+	border-bottom-color: @complementaryColorLight;
+}

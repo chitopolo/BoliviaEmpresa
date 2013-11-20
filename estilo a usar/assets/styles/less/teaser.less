@@ -1,0 +1,14 @@
+.teaser {
+	text-align: center;
+	border-bottom: 10px solid darken(@teaserBackgroundColor, 10%);
+	background: @teaserBackgroundColor @teaserBackground top center fixed;
+	h1 {
+		color: @teaserHeadingColor;
+		.text-shadow(0 1px 1px rgba(0,0,0,0.5));
+		text-transform: capitalize;
+		font-weight: bold;
+	}
+	.lead {
+		color: @teaserLeadColor;
+	}
+}

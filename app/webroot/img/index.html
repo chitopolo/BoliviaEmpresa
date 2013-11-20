@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width-device-width, initial-scale-1.0">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/bootstrap-responsive.css">
+	<link rel="stylesheet" type="text/css" href="css/estilos.css">
+</head>
+<body>
+
+
+<script> 
+$('.edit-link').click(function(){
+$.ajax({
+  type: "GET",
+  url: $(this).attr('href')
+}).done(function(html_form) {
+  $('#myModal').html(html_form);
+  $('#myModal').show();
+});
+return false;
+});
+</script>
+
+<!-- Button to trigger modal -->
+<a href="#myModal" role="button" class="btn" data-toggle="modal">Launch demo modal</a>
+ 
+<!-- Modal -->
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Modal header1</h3>
+  </div>
+  <div class="modal-body">
+    <p>One fine body…</p>
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    <button class="btn btn-primary">Save changes</button>
+    <a href="#myModal1" role="button" class="btn" data-toggle="modal1">Launch demo modal</a>
+  </div>
+
+</div>
+<div id="myModal1" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Modal header2</h3>
+  </div>
+  <div class="modal-body">
+    <p>One fine body…</p>
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    <button class="btn btn-primary">Save changes</button>
+    <a href="#myModal2" role="button" class="btn" data-toggle="modal2">Launch demo modal</a>
+  </div>
+  
+</div>
+<div id="myModal2" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Modal header3</h3>
+  </div>
+  <div class="modal-body">
+    <p>One fine body…</p>
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    <button class="btn btn-primary">Save changes</button>
+    <a href="#myModal" role="button" class="btn" data-toggle="modal">Launch demo modal</a>
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="myCarousel" class="carousel slide">
+  <div class="carousel-inner">
+    <div class="item">
+      <img src="http://twitter.github.com/bootstrap/assets/img/bootstrap-mdo-sfmoma-01.jpg" alt="">
+      <div class="carousel-caption">
+        <h4>First Thumbnail label</h4>
+        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+      </div>
+    </div>
+    <div class="item">
+      <img src="http://twitter.github.com/bootstrap/assets/img/bootstrap-mdo-sfmoma-02.jpg" alt="">
+      <div class="carousel-caption">
+        <h4>Second Thumbnail label</h4>
+        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+      </div>
+    </div>
+    <div class="item active">
+      <img src="http://twitter.github.com/bootstrap/assets/img/bootstrap-mdo-sfmoma-03.jpg" alt="">
+      <div class="carousel-caption">
+        <h4>Third Thumbnail label</h4>
+        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+      </div>
+    </div>
+  </div>
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+</div>
+
+
+<div style="position: relative; z-index: 10;">
+   <div style=" background-color: #f00; position:absolute; z-index:-1; top:0; left:0; right:
+0; bottom:0; opacity:0.2;"></div>
+
+
+<ul class="nav nav-pills"  style="text-align: center;">
+          <li class="dropdown" style="width: 100px;" >
+            <a class="dropdown-toggle" data-toggle="dropdown" href="" style="margin-right: 0px;">
+            menu1f
+            <b class="caret"></b>
+            </a>
+              <ul class="dropdown-menu" style="min-width: 0px; text-align: center; padding:0; top: 89%;">
+                <li style="width: 100px;">  <a href="">submenu
+                
+                </a></li>
+                <li>  <a href="">submenu</a></li>
+                <li>  <a href="">submenu</a></li>
+              </ul>
+          </li style="width: 100px;">
+          <li style="width: 100px;"><a href="">menu2</a></li>
+          <li style="width: 100px;"><a href="">menu3</a></li>
+        </ul>      
+
+
+
+
+
+
+
+
+
+<ul class="nav nav-pills">
+  <li class="dropdown">
+  <a class="dropdown-toggle" data-toggle="dropdown" href="">
+  menu1
+  <b class="caret"></b>
+  </a>
+  <ul class="dropdown-menu">
+    <li>
+      <a href="">submenu</a> </li>
+    <li>  <a href="">submenu</a></li>
+    <li>  <a href="">submenu</a></li>
+    
+  </ul>
+  </li>
+  <li><a href="">menu2</a></li>
+  <li><a href="">menu3</a></li>
+</ul>
+
+
+<ul class="nav nav-tabs">
+  <li class="dropdown">
+  <a class="dropdown-toggle" data-toggle="dropdown" href="">
+  menu1
+  <b class="caret"></b>
+  </a>
+  <ul class="dropdown-menu">
+    <li>
+      <a href="">submenu</a> </li>
+    <li>  <a href="">submenu</a></li>
+    <li>  <a href="">submenu</a></li>
+    </li>
+  </ul>
+  </li>
+  <li><a href="">menu2</a></li>
+  <li><a href="">menu3</a></li>
+</ul>
+
+
+<ul class="nav nav-tabs nav-stacked">
+  <li><a href="">menu1</a></li>
+  <li><a href="">menu2</a></li>
+  <li><a href="">menu3</a></li>
+</ul>
+
+
+
+<div class="btn-group">
+<button class="btn btn-small" > menu
+</button>
+<button class="btn dropdown-toggle" data-toggle="dropdown">
+  <span class="caret"></span>
+</button>
+<ul class="dropdown-menu">
+  <li><a href="">sub menu</a></li>
+  <li><a href="">sub menu</a></li>
+  <li><a href="">sub menu</a></li>
+  </ul> 
+</div>
+
+
+
+
+
+
+
+<dib class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container"><a href="" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <a href="" class="brand">aprendiendo</a>
+      <div class="nav-collapse">
+        <ul class="nav">
+          <li class="active"><a href="#">inicia</a></li>
+          <li><a href="#aboot">quien soy </a></li>
+          <li><a href="#contact">cpntacteme</a></li>
+        </ul>
+      </div>
+  
+
+      </div>
+  </div>
+</dib>
+
+
+
+<style> 
+      body { 
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */ 
+      } 
+      a.menu:after, .dropdown-toggle:after { 
+        content: none; 
+      } 
+
+    ul.nav li.dropdown:hover { 
+      font-weight: bold; 
+     
+
+      
+} 
+  ul.nav li.dropdown:hover ul.dropdown-menu.submenu{ 
+    display: block; 
+    margin-left: 220px; 
+     
+    margin-top: -36px; 
+                 
+                background-color:#FFF; 
+                font-weight: normal; 
+                 
+  } 
+
+    </style> 
+     
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --> 
+    <!--[if lt IE 9]> 
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script> 
+    <![endif]--> 
+
+    <!-- Le fav and touch icons --> 
+     
+  </head> 
+
+  <body> 
+
+    <div class="navbar navbar-fixed-top"> 
+      <div class="navbar-inner"> 
+        <div class="container"> 
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> 
+            <span class="icon-bar"></span> 
+            <span class="icon-bar"></span> 
+            <span class="icon-bar"></span> 
+          </a> 
+          <a class="brand" href="#">Project name</a> 
+          <div class="nav-collapse"> 
+            <ul class="nav"> 
+              <li class="active"><a href="#">Home</a></li> 
+              <li><a href="#about">About</a></li> 
+              <li><a href="#contact">Contact</a></li> 
+            </ul> 
+          </div><!--/.nav-collapse --> 
+        </div> 
+      </div> 
+    </div> 
+
+
+
+        <div class="navbar navbar-fixed-top"> 
+      <div class="navbar-inner"> 
+        <div class="container"> 
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> 
+            <span class="icon-bar"></span> 
+            <span class="icon-bar"></span> 
+            <span class="icon-bar"></span> 
+          </a> 
+          <a class="brand" href="#">Project name</a> 
+          <div class="nav-collapse"> 
+            <ul class="nav"> 
+              <li class="active"><a href="#">Home</a></li> 
+              <li><a href="#about">About</a></li> 
+              <li><a href="#contact">Contact</a></li> 
+            </ul> 
+          </div><!--/.nav-collapse --> 
+          <div class="nav-collapse">
+            
+          </div>
+          <div class="nav-collapse">
+            <ul class="nav"> 
+              <li class="active"><a href="#">Home</a></li> 
+              <li><a href="#about">About</a></li> 
+              <li><a href="#contact">Contact</a></li> 
+            </ul>              
+          </div>
+        </div> 
+      </div> 
+    </div> 
+
+
+
+
+
+
+
+
+
+
+    <div class="container"> 
+
+      <div id="zona-navegacion" class="span3 sidebar-nav"> 
+        <ul id="menuLateral" class="nav nav-tabs nav-stacked"> 
+          <li class="dropdown"><a class="dropdown-toggle" href="#menu1">Menu 1</a> 
+            <ul class="dropdown-menu submenu"> 
+              <li><a  href="#menu1.1">Menu 1.1</a></li> 
+              <li><a  href="#menu1.2">Menu 1.2</a></li> 
+              <li><a  href="#menu1.3">Menu 1.3</a></li> 
+              <li><a  href="#menu1.4">Menu 1.4</a></li> 
+              <li><a  href="#menu1.5">Menu 1.5</a></li> 
+
+            </ul> 
+          </li> 
+
+          <li class="dropdown"><a class="dropdown-toggle" href="#menu2">Menu 2</a> 
+            <ul class="dropdown-menu submenu"> 
+              <li><a  href="#menu2.1">Menu 2.1</a></li> 
+              <li><a  href="#menu2.2">Menu 2.2</a></li> 
+              <li><a  href="#menu2.3">Menu 2.3</a></li> 
+              <li><a  href="#menu2.4">Menu 2.4</a></li> 
+              <li><a  href="#menu2.5">Menu 2.5</a></li> 
+
+            </ul> 
+          </li> 
+
+
+          <li class="dropdown"><a class="dropdown-toggle" href="#menu3">Menu 3</a> 
+            <ul class="dropdown-menu submenu"> 
+              <li><a  href="#menu3.1">Menu 3.1</a></li> 
+              <li><a  href="#menu3.2">Menu 3.2</a></li> 
+              <li><a  href="#menu3.3">Menu 3.3</a></li> 
+              <li><a  href="#menu3.4">Menu 3.4</a></li> 
+              <li><a  href="#menu3.5">Menu 3.5</a></li> 
+
+            </ul> 
+          </li> 
+
+          <li class="dropdown"><a class="dropdown-toggle" href="#menu4">Menu 4</a> 
+            <ul class="dropdown-menu submenu"> 
+              <li><a  href="#menu4.1">Menu 4.1</a></li> 
+              <li><a  href="#menu4.2">Menu 4.2</a></li> 
+              <li><a  href="#menu4.3">Menu 4.3</a></li> 
+              <li><a  href="#menu4.4">Menu 4.4</a></li> 
+              <li><a  href="#menu4.5">Menu 4.5</a></li> 
+
+            </ul> 
+          </li> 
+        </ul> 
+      </div> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ul class="nav nav-pills"  style="Display: inline-block;">
+          <li class="dropdown" >
+            <a class="dropdown-toggle" data-toggle="dropdown" href="">
+            menu1fdd
+            </a>
+              <ul class="dropdown-menu" style="">
+                <li>  <a href="">submenu</a></li>
+                <li>  <a href="">submenu</a></li>
+                <li>  <a href="">submenu</a></li>
+              </ul>
+          </li>
+          <li><a href="">menu2</a></li>
+          <li><a href="">menu3</a></li>
+        </ul>      
+
+
+
+
+
+
+
+
+
+
+
+
+    </div> <!-- /container --> 
+
+    <!-- Le javascript 
+    ================================================== --> 
+    <!-- Placed at the end of the document so the pages load faster --> 
+    <script src="http://ajax.googleapis.com/aja
+     x/libs/jquery/1.7.1/jquery.min.js"></script> 
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.0.4/bootstrap.min.js"></script> 
+    <script type="text/javascript"> 
+        $('li a').click(function(){ 
+
+          var $this= $(this); 
+          console.log('click en ' + $this.html()); 
+        }) 
+    </script> 
+
+  </body> 
+</html> 
+
+
+
+
+	<script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+</body>
+</html>

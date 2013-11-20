@@ -1,0 +1,72 @@
+.btn {
+	background-color: none;
+	background-image: none;
+	background: @btnBackground;
+	color: #fff;
+	cursor: pointer;
+	text-shadow: 0 -1px 0 darken(@btnBackground, 20%);
+	border: 1px solid @btnBackground;
+	.border-radius(2px);
+	.box-shadow(inset 0 0 0 rgba(0,0,0,0)); // discard inset shadow
+	&:hover, &:focus {
+		color: #fff;
+		background: @btnBackgroundHighlight;
+		.transition(all 0.3s ease-in-out);
+		border: 1px solid @btnBackground;
+	}
+	&.btn-primary {
+		background: @btnPrimaryBackground;
+		text-shadow: 0 -1px 0 darken(@btnPrimaryBackground, 20%);
+		border: 1px solid @btnPrimaryBackground;
+		&:hover, &:focus {
+			background: @btnPrimaryBackgroundHighlight;
+			border: 1px solid @btnPrimaryBackground;
+		}
+	}
+	&.btn-info {
+		background: @btnInfoBackground;
+		text-shadow: 0 -1px 0 darken(@btnInfoBackground, 20%);
+		border: 1px solid @btnInfoBackground;
+		&:hover, &:focus {
+			background: @btnInfoBackgroundHighlight;
+			border: 1px solid @btnInfoBackground;
+		}
+	}
+	&.btn-success {
+		background: @btnSuccessBackground;
+		text-shadow: 0 -1px 0 darken(@btnSuccessBackground, 20%);
+		border: 1px solid @btnSuccessBackground;
+		&:hover, &:focus {
+			background: @btnSuccessBackgroundHighlight;
+			border: 1px solid @btnSuccessBackground;
+		}
+	}
+	&.btn-warning {
+		background: @btnWarningBackground;
+		text-shadow: 0 -1px 0 darken(@btnWarningBackground, 20%);
+		border: 1px solid @btnWarningBackground;
+		&:hover, &:focus {
+			background: @btnWarningBackgroundHighlight;
+			border: 1px solid @btnWarningBackground;
+		}
+	}
+	&.btn-danger {
+		background: @btnDangerBackground;
+		text-shadow: 0 -1px 0 darken(@btnDangerBackground, 20%);
+		border: 1px solid @btnDangerBackground;
+		&:hover, &:focus {
+			background: @btnDangerBackgroundHighlight;
+			border: 1px solid @btnDangerBackground;
+		}
+	}
+	&.btn-inverse {
+		background: @btnInverseBackground;
+		text-shadow: 0 -1px 0 darken(@btnInverseBackground, 20%);
+		border: 1px solid @btnInverseBackground;
+		&:hover, &:focus {
+			background: @btnInverseBackgroundHighlight;
+			border: 1px solid @btnInverseBackground;
+		}
+	}
+}
+

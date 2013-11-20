@@ -1,0 +1,110 @@
+// The Navbar
+//-----------------------------------------------------
+
+// Navbar - Brand
+.navbar .brand {
+	padding: 5px 20px 5px;
+	color: @navbarLinkColor;
+	font-size: 16px;
+	font-weight: bold;
+	text-shadow: none;
+	&:hover {
+		color: @navbarLinkColorHover;
+	}
+}
+// Navbar - Background
+.navbar-inner {
+	border: none;
+	filter: none;
+	background: @navbarBackground;
+	background-image: none;
+}
+// Navbar - Links 
+.navbar .nav > li > a {
+	padding: 20px 20px; // Increase padding for taller navbar
+	color: @navbarLinkColor;
+	text-shadow: none;
+	font-weight: bold;
+	&:hover, &:focus {
+		color: @navbarLinkColorHover;
+		background: @navbarLinkHoverBackground;
+	}
+}
+// Navbar - Links - active
+.navbar .nav > .active > a,
+.navbar .nav > .active > a:hover,
+.navbar .nav > .active > a:focus {
+	color: @navbarLinkColorActive;
+	text-decoration: none;
+	background-color: @navbarActiveBackground;
+	.inner-shadow(0 0 0 rgba(0,0,0,0));
+}
+
+// Dropdown Submenu
+//-----------------------------------------------------
+
+// Dropdown link
+.navbar .nav li.dropdown {
+	// Dropdown - open
+	&.open > .dropdown-toggle {
+		background-color: @navbarActiveBackground;
+		color: @navbarLinkColor;
+		.caret {
+			border-top-color: @navbarLinkColor;
+		}
+	}
+	// Dropdown - active
+	&.active > .dropdown-toggle,
+	&.open.active > .dropdown-toggle {
+		background-color: @navbarActiveBackground;
+		color: @navbarLinkColorActive;
+		.caret {
+			border-top-color: @navbarLinkColorActive;
+		}
+	}
+	// Caret - normal
+	> .dropdown-toggle .caret {
+		border-top-color: @navbarLinkColorHover;
+	}
+	// Caret - hover, focus
+	> a:hover .caret,
+	> a:focus .caret {
+		border-top-color: @navbarLinkColorHover;
+	}
+}
+// Submenu - container
+.dropdown-menu {
+	margin-top: -1px;
+	border:0;
+	.border-radius(0 0 3px 3px);
+	.box-shadow(0 2px 5px rgba(0,0,0,0.2));
+	background-color: @navbarBackground;
+}
+// Submenu - caret
+.navbar .nav > li > .dropdown-menu::before,
+.navbar .nav > li > .dropdown-menu::after {
+	display: none;
+}
+// Submenu - Links
+.dropdown-menu li > a {
+	color: @navbarLinkColor;
+	&:hover, &:focus {
+		color: @navbarLinkColor;
+		background-color: @navbarActiveBackground; 
+		background-image: none;
+	}
+}
+
+// Responsive Button (Toggle)
+//-----------------------------------------------------
+
+// Navbar - Responsive button
+.navbar .btn-navbar {
+	margin-top: 10px;
+	background: @navbarButtonBackground;
+	&:hover {
+		background: lighten(@navbarButtonBackground, 5%);
+		border-color: lighten(@navbarButtonBackground, 1%);
+	}
+}
+

@@ -1,0 +1,24 @@
+.footer-top,
+.footer-bottom {
+	color: @footerTextColor;
+	h1, h2, h3, h4, h5, h6 {
+		color: @footerHeadingColor;
+	}
+	a {
+		color: @white;
+		&:hover {
+			color: @primaryColor;
+			text-decoration: none;
+		}
+	}
+}
+
+.footer-top {
+	border-top: 10px solid darken(@footerTopBackground, 5%);
+	background: @footerTopBackground;
+}
+
+.footer-bottom {
+	background: @footerBottomBackground;
+}
+

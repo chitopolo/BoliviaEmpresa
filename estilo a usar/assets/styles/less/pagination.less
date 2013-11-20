@@ -1,0 +1,17 @@
+.pagination ul > { 
+	.active a {
+		color: @white;
+		background: @primaryColor;
+		&:hover, &:focus {
+			color: @white;
+			background: darken(@primaryColor, 5%);
+		}
+	}
+	.disabled a {
+		background: @white;
+	}
+	li > a {
+		font-weight: bold;
+		padding: 10px 20px;
+	}
+}

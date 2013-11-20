@@ -1,0 +1,49 @@
+
+.plan {
+	background: @silver;
+	.border-radius(4px);
+	border: 1px solid darken(@silver, 5%);
+	margin-bottom: 15px;
+	text-align: center;
+	.plan-name {
+		padding: 10px 20px;
+		background: darken(@complementaryColor, 5%);
+		.border-radius(3px 3px 0 0);
+		h3 {
+			color: @white;
+		}
+	}
+	.plan-info {
+		padding: 20px;
+		background: @complementaryColor;
+	}
+	.plan-price h1 {
+		font-size: 60px;
+		line-height: 100%;
+		padding: 20px;
+		small {
+			font-size: 14px;
+		}
+	}
+	.plan-features {
+		li {
+			padding: 10px 20px;
+			border-bottom: 1px solid darken(@silver, 5%);
+			.box-shadow(0 1px 0 0 lighten(@silver, 5%)); 
+		}
+	}
+	.plan-cta {
+		padding: 20px;
+	}
+	&.plan-featured {
+		.plan-name {
+			background: @primaryColor;
+		}
+		.plan-info {
+			background: lighten(@primaryColor, 5%);
+			> p {
+				color: @white;
+			}
+		}
+	}
+}
