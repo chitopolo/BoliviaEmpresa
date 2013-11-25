@@ -86,6 +86,26 @@ class AndroidController extends AppController {
         $this->set(compact('my_array2'));*/
  
         }
+         public function login($usu = null,$pass=null) {
+            $this->loadModel('User');
+            $this->request->data['User']['username']=$usu;
+            $this->request->data['User']['password']=$pass;
+            $var = 'nada';
+                if ($this->Auth->login()) {
+                   $var = 'ok';
+                }else{
+                    $var = 'fallo';
+                }
+                $array = array("mensaje" => $var); 
+                $da=  json_encode($array);    
+                $this->set(compact('da'));
+                $this->layout = 'ajax';
+            
+        }
+          public function logout() {
+           $this->Auth->logout();
+            $this->layout = 'ajax';
+        }
 
     
 }

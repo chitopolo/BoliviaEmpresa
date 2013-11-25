@@ -20,7 +20,7 @@
 $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework');
 ?>
 <!DOCTYPE html>
-<html>
+<html  lang="en">
 <head>
     
 	<?php echo $this->Html->charset(); ?>
@@ -38,8 +38,9 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 	<?php
 		echo $this->Html->meta('icon');
 		//,'font-awesome','theme'
-		echo $this->Html->css(array('bootstrap.min', 'font-awesome', 'theme'));
-		echo $this->Html->script(array('bootstrap.min', 'jquery-1.8.3.min', 'jquery.isotope.min','bootstrap'));
+                
+		echo $this->Html->css(array('bootstrap.min', 'font-awesome','theme','isotope'));		
+                echo $this->Html->script(array( 'jquery-1.8.3.min','bootstrap', 'jquery.isotope.min'));
                 echo $this->Html->script('ajax',array('id'=>'ajax'));                
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
@@ -186,7 +187,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
         <?php echo $this->fetch('scriptBottom'); ?>
 	<?php  echo $this->element('sql_dump'); ?>	
         <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>        
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 	<script>window.jQuery || document.write('<script src="assets/js/jquery-1.8.3.min.js"><\/script>')</script>
 
 </body>

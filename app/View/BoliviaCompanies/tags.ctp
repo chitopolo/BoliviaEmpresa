@@ -6,6 +6,6 @@ foreach ($datos as $valores){ ?>
     <i class="icon-star"></i> <?=$valores['Tag']['name']?>
     </a>
 </li>    
-<? } 
+<?php } 
 }
-?>
+
