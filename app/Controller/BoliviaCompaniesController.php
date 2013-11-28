@@ -38,7 +38,7 @@ class BoliviaCompaniesController extends AppController {
  *
  * @var array
  */
-	public $uses = array();
+    public $uses = array();
       
 /**
  * Displays a view
@@ -46,7 +46,7 @@ class BoliviaCompaniesController extends AppController {
  * @param mixed What page to display
  * @return void
  * @throws NotFoundException When the view file could not be found
- *	or MissingViewException in debug mode.
+ *  or MissingViewException in debug mode.
  */     
         public function index(){
             $this->loadModel('Ad');
@@ -59,19 +59,19 @@ class BoliviaCompaniesController extends AppController {
         public function viewEditStory($id=1){
             $this->loadModel('Story');
             if (!$this->Story->exists($id)) {
-			throw new NotFoundException(__('Invalid story'));
-		}
-		if ($this->request->is(array('post', 'put'))) {
-			if ($this->Story->save($this->request->data)) {
-				$this->Session->setFlash(__('The story has been saved.'));
-				return $this->redirect(array('action' => 'index'));
-			} else {
-				$this->Session->setFlash(__('The story could not be saved. Please, try again.'));
-			}
-		} else {
-			$options = array('conditions' => array('Story.' . $this->Story->primaryKey => $id));
-			$this->request->data = $this->Story->find('first', $options);
-		}
+            throw new NotFoundException(__('Invalid story'));
+        }
+        if ($this->request->is(array('post', 'put'))) {
+            if ($this->Story->save($this->request->data)) {
+                $this->Session->setFlash(__('The story has been saved.'));
+                return $this->redirect(array('action' => 'index'));
+            } else {
+                $this->Session->setFlash(__('The story could not be saved. Please, try again.'));
+            }
+        } else {
+            $options = array('conditions' => array('Story.' . $this->Story->primaryKey => $id));
+            $this->request->data = $this->Story->find('first', $options);
+        }
         }
         public function stories(){
             $this->loadModel('Story');
@@ -83,14 +83,14 @@ class BoliviaCompaniesController extends AppController {
         public function contacts(){
             $this->loadModel('Contact');
             if ($this->request->is('post')) {
-			$this->Contact->create();
-			if ($this->Contact->save($this->request->data)) {
-				$this->Session->setFlash(__('The contact has been saved.'));
-				//return $this->redirect(array('action' => 'index'));
-			} else {
-				$this->Session->setFlash(__('The contact could not be saved. Please, try again.'));
-			}
-	    }
+            $this->Contact->create();
+            if ($this->Contact->save($this->request->data)) {
+                $this->Session->setFlash(__('The contact has been saved.'));
+                //return $this->redirect(array('action' => 'index'));
+            } else {
+                $this->Session->setFlash(__('The contact could not be saved. Please, try again.'));
+            }
+        }
           
         }
         public function perfilCompany($id=null){
@@ -203,19 +203,19 @@ class BoliviaCompaniesController extends AppController {
           public function viewEditConsultation($id=null){
               $this->loadModel('Consultation');
               if (!$this->Consultation->exists($id)) {
-			throw new NotFoundException(__('Invalid consultation'));
-		}
-		if ($this->request->is(array('post', 'put'))) {
-			if ($this->Consultation->save($this->request->data)) {
-				$this->Session->setFlash(__('La consulta no a sido editada'));
-				//return $this->redirect(array('action' => 'index'));
-			} else {
-				$this->Session->setFlash(__('La consulta a sido editada'));
-			}
-		} 
+            throw new NotFoundException(__('Invalid consultation'));
+        }
+        if ($this->request->is(array('post', 'put'))) {
+            if ($this->Consultation->save($this->request->data)) {
+                $this->Session->setFlash(__('La consulta no a sido editada'));
+                //return $this->redirect(array('action' => 'index'));
+            } else {
+                $this->Session->setFlash(__('La consulta a sido editada'));
+            }
+        } 
                 $options = array('conditions' => array('Consultation.' . $this->Consultation->primaryKey => $id));
-                $this->request->data = $this->Consultation->find('first', $options);		
-		$this->set(compact());    
+                $this->request->data = $this->Consultation->find('first', $options);        
+        $this->set(compact());    
           
           }
           public function perfilSub_users(){
@@ -388,16 +388,16 @@ class BoliviaCompaniesController extends AppController {
            
             $this->loadModel('Ticket');
             if (!$this->Ticket->exists($id)) {
-			throw new NotFoundException(__('Invalid ticket'));
-		}
-		if ($this->request->is(array('post', 'put'))) {
-			if ($this->Ticket->save($this->request->data)) {
-				$this->Session->setFlash(__('El ticket se a guardarse'));
-				return $this->redirect(array('action' => 'index'));
-			} else {
-				$this->Session->setFlash(__('El ticket no a podido guardarse'));
-			}
-		} 
+            throw new NotFoundException(__('Invalid ticket'));
+        }
+        if ($this->request->is(array('post', 'put'))) {
+            if ($this->Ticket->save($this->request->data)) {
+                $this->Session->setFlash(__('El ticket se a guardarse'));
+                return $this->redirect(array('action' => 'index'));
+            } else {
+                $this->Session->setFlash(__('El ticket no a podido guardarse'));
+            }
+        } 
         }
         
         public function homesearcher(){
@@ -647,22 +647,22 @@ class BoliviaCompaniesController extends AppController {
             
             
            if (!$this->CompaniesItem->exists($id)) {
-			throw new NotFoundException(__('Invalid companies item'));
-		}
-		if ($this->request->is(array('post', 'put'))) {
-			if ($this->CompaniesItem->save($this->request->data)) {
-				$this->Session->setFlash(__('The companies item has been saved.'));
-				return $this->redirect(array('action' => 'index'));
-			} else {
-				$this->Session->setFlash(__('The companies item could not be saved. Please, try again.'));
-			}
-		} else {
-			$options = array('conditions' => array('CompaniesItem.' . $this->CompaniesItem->primaryKey => $id));
-			$this->request->data = $this->CompaniesItem->find('first', $options);
-		}
-		
-		$items = $this->CompaniesItem->Item->find('list');
-		$this->set(compact('companies', 'items'));
+            throw new NotFoundException(__('Invalid companies item'));
+        }
+        if ($this->request->is(array('post', 'put'))) {
+            if ($this->CompaniesItem->save($this->request->data)) {
+                $this->Session->setFlash(__('The companies item has been saved.'));
+                return $this->redirect(array('action' => 'index'));
+            } else {
+                $this->Session->setFlash(__('The companies item could not be saved. Please, try again.'));
+            }
+        } else {
+            $options = array('conditions' => array('CompaniesItem.' . $this->CompaniesItem->primaryKey => $id));
+            $this->request->data = $this->CompaniesItem->find('first', $options);
+        }
+        
+        $items = $this->CompaniesItem->Item->find('list');
+        $this->set(compact('companies', 'items'));
             
             
         }
@@ -755,19 +755,19 @@ class BoliviaCompaniesController extends AppController {
                 foreach ($tag as $val){
                     $can = $this->Tag->find('count',array('conditions'=> array('Tag.name' => $val)));
                     if($can==0){                        
-			$this->Tag->create();
+            $this->Tag->create();
                        
-			if ($this->Tag->save(array('Tag'=>array('id'=>null,'name'=>$val)))) {
-				$this->Session->setFlash(__('El tag se a guardado'));				
-			} 
+            if ($this->Tag->save(array('Tag'=>array('id'=>null,'name'=>$val)))) {
+                $this->Session->setFlash(__('El tag se a guardado'));               
+            } 
                     }
                 }
               
 
                 $this->Company->create();                
-			if ($this->Company->save($this->request->data)) {
-				$this->Session->setFlash(__('La empresa sea a guardado'));
-				//return $this->redirect(array('action' => 'index'));                                
+            if ($this->Company->save($this->request->data)) {
+                $this->Session->setFlash(__('La empresa sea a guardado'));
+                //return $this->redirect(array('action' => 'index'));                                
                                 $idcompany = $this->Company->find('first',array('order' => 'Company.created DESC'));
                                   foreach ($tag as $val){
                                     $dat = $this->Tag->find('first',array('conditions'=>array('Tag.name' => $val)));
@@ -780,15 +780,15 @@ class BoliviaCompaniesController extends AppController {
                                  }
                                 
                                 
-			} else {
-				$this->Session->setFlash(__('La empresa no se a podido guardar'));
+            } else {
+                $this->Session->setFlash(__('La empresa no se a podido guardar'));
                         }
                }    
-            }		
-		
+            }       
+        
                 $categories = $this->Category->find('all');
-		$subCategories = $this->Company->SubCategory->find('list');		
-		$this->set(compact('categories', 'subCategories'));
+        $subCategories = $this->Company->SubCategory->find('list');     
+        $this->set(compact('categories', 'subCategories'));
                 
         }
 
@@ -854,8 +854,8 @@ class BoliviaCompaniesController extends AppController {
                     $this->request->data['Deal']['filename']=$val['image'];
                      break;
                     }
-			$this->Deal->create();
-			if ($this->Deal->save($this->request->data)) {
+            $this->Deal->create();
+            if ($this->Deal->save($this->request->data)) {
                             
                             $can_tic = $this->request->data['tickets'];
                             $deal_d = $this->Deal->find('first',array('order' => 'Deal.id DESC'));
@@ -867,36 +867,36 @@ class BoliviaCompaniesController extends AppController {
                                     $this->Session->setFlash(__('El ticket no pudo ser guardado'));
                                 }
                             }
-				$this->Session->setFlash(__('La promocion fue guardada'));
-				
-			} else {
-				$this->Session->setFlash(__('La promocion no fue guardada'));
-			}
-		}	
-		//$branches = $this->Deal->Branch->find('list');
-		$this->set(compact('branches'));
+                $this->Session->setFlash(__('La promocion fue guardada'));
+                
+            } else {
+                $this->Session->setFlash(__('La promocion no fue guardada'));
+            }
+        }   
+        //$branches = $this->Deal->Branch->find('list');
+        $this->set(compact('branches'));
                 
            }
          public function viewEditDeal($id = null) {
              
              //session img para editar imagenes 
-		if (!$this->Deal->exists($id)) {
-			throw new NotFoundException(__('Invalid deal'));
-		}
-		if ($this->request->is(array('post', 'put'))) {
-			if ($this->Deal->save($this->request->data)) {
-				$this->Session->setFlash(__('The deal has been saved.'));
-				return $this->redirect(array('action' => 'index'));
-			} else {
-				$this->Session->setFlash(__('The deal could not be saved. Please, try again.'));
-			}
-		} else {
-			$options = array('conditions' => array('Deal.' . $this->Deal->primaryKey => $id));
-			$this->request->data = $this->Deal->find('first', $options);
-		}
-		$branches = $this->Deal->Branch->find('list');
-		$this->set(compact('branches'));
-	}
+        if (!$this->Deal->exists($id)) {
+            throw new NotFoundException(__('Invalid deal'));
+        }
+        if ($this->request->is(array('post', 'put'))) {
+            if ($this->Deal->save($this->request->data)) {
+                $this->Session->setFlash(__('The deal has been saved.'));
+                return $this->redirect(array('action' => 'index'));
+            } else {
+                $this->Session->setFlash(__('The deal could not be saved. Please, try again.'));
+            }
+        } else {
+            $options = array('conditions' => array('Deal.' . $this->Deal->primaryKey => $id));
+            $this->request->data = $this->Deal->find('first', $options);
+        }
+        $branches = $this->Deal->Branch->find('list');
+        $this->set(compact('branches'));
+    }
            
            public function ViewEditBranch($id=null){
                 
@@ -905,23 +905,23 @@ class BoliviaCompaniesController extends AppController {
                $this->loadModel('GroupsUser');
                
                if (!$this->Branch->exists($id)) {
-			throw new NotFoundException(__('Invalid branch'));
-		}
-		if ($this->request->is(array('post', 'put'))) {
+            throw new NotFoundException(__('Invalid branch'));
+        }
+        if ($this->request->is(array('post', 'put'))) {
                     
                     foreach ($this->Session->read('branch') as $val){        
                     $this->request->data['Branch']['filename']=$val['image'];
                      break;
                     }
-			if ($this->Branch->save($this->request->data)) {
-				$this->Session->setFlash(__('The branch has been saved.'));
-				//return $this->redirect(array('action' => 'index'));
-			} else {
-				$this->Session->setFlash(__('The branch could not be saved. Please, try again.'));
-			}
-		} 
-			$options = array('conditions' => array('Branch.' . $this->Branch->primaryKey => $id));
-			$this->request->data = $this->Branch->find('first', $options);
+            if ($this->Branch->save($this->request->data)) {
+                $this->Session->setFlash(__('The branch has been saved.'));
+                //return $this->redirect(array('action' => 'index'));
+            } else {
+                $this->Session->setFlash(__('The branch could not be saved. Please, try again.'));
+            }
+        } 
+            $options = array('conditions' => array('Branch.' . $this->Branch->primaryKey => $id));
+            $this->request->data = $this->Branch->find('first', $options);
                         
                         $this->loadModel('City');
                            
@@ -955,9 +955,9 @@ class BoliviaCompaniesController extends AppController {
                         $this->Session->write($img);
                         
                 $cities = $this->City->find('all',array('recursive'=>0));
-		
+        
                 $companies = $this->Branch->Company->find('list');
-	        
+            
                 $groupsUsers = $this->GroupsUser->find('all',array('conditions'=>array('GroupsUser.groupuser_id'=>$this->request->data['GroupsUser']['groupuser_id']),'recursive'=>0));
                 $array = null;
                 $use = null ;
@@ -983,23 +983,23 @@ class BoliviaCompaniesController extends AppController {
                
                $this->loadModel('GroupsUser');
               if ($this->request->is('post')) {
-			
+            
                     foreach ($this->Session->read('branch') as $val){        
                     $this->request->data['Branch']['filename']=$val['image'];
                      break;
                     }
                   $this->Branch->create();
                         
-			if ($this->Branch->save($this->request->data)) {
-				$this->Session->setFlash(__('La sucursal a sido guardada'));
-				
-			} else {
-				$this->Session->setFlash(__('La sucursal no a sido guardada'));
-			}
-		}
-		$cities = $this->City->find('all',array('recursive'=>0));
-		//$companies = $this->Branch->Company->find('list');
-	        $groupsUsers = $this->GroupsUser->find('all',array('conditions'=>array('GroupsUser.groupuser_id'=>$id),'recursive'=>0));
+            if ($this->Branch->save($this->request->data)) {
+                $this->Session->setFlash(__('La sucursal a sido guardada'));
+                
+            } else {
+                $this->Session->setFlash(__('La sucursal no a sido guardada'));
+            }
+        }
+        $cities = $this->City->find('all',array('recursive'=>0));
+        //$companies = $this->Branch->Company->find('list');
+            $groupsUsers = $this->GroupsUser->find('all',array('conditions'=>array('GroupsUser.groupuser_id'=>$id),'recursive'=>0));
                 $array = null;
                 $use = null ;
                
@@ -1009,7 +1009,7 @@ class BoliviaCompaniesController extends AppController {
                 foreach ($groupsUsers as $gro_us){
                     $use[$gro_us['GroupsUser']['id']] = $gro_us['User']['first_name'].' '.$gro_us['User']['last_name'];
                 }
-        	$this->set(compact('array','use'));
+            $this->set(compact('array','use'));
                 $this->layout = 'ajax';
         }
         public function registeruser(){
@@ -1042,20 +1042,20 @@ class BoliviaCompaniesController extends AppController {
                    echo "<script>alert('error')</script>" ;
                  throw new NotFoundException(__('Invalid user'));
                         
-		}
+        }
                      if($this->Session->check('user')){ 
                         foreach ($this->Session->read('user') as $val){        
                         $this->request->data['User']['filename']=$val['image'];
                          break;
                         } 
                      }
-			if ($this->User->save($this->request->data)) {
-				$this->Session->setFlash(__('The user has been saved.'));
-				//return $this->redirect(array('action' => 'index'));
-			} else {
-				$this->Session->setFlash(__('The user could not be saved. Please, try again.'));
-			}
-		 }
+            if ($this->User->save($this->request->data)) {
+                $this->Session->setFlash(__('The user has been saved.'));
+                //return $this->redirect(array('action' => 'index'));
+            } else {
+                $this->Session->setFlash(__('The user could not be saved. Please, try again.'));
+            }
+         }
         }
         public function ViewEditCompany($id=null){
             $this->loadModel('Company');
@@ -1064,9 +1064,9 @@ class BoliviaCompaniesController extends AppController {
             $this->loadModel('CompaniesTag');
             
             if (!$this->Company->exists($id)) {
-			throw new NotFoundException(__('Invalid company'));
-		}
-		if ($this->request->is(array('post', 'put'))) {                                      
+            throw new NotFoundException(__('Invalid company'));
+        }
+        if ($this->request->is(array('post', 'put'))) {                                      
 
                     
                     
@@ -1092,7 +1092,7 @@ class BoliviaCompaniesController extends AppController {
                             $this->Tag->create();
 
                             if ($this->Tag->save(array('Tag'=>array('id'=>null,'name'=>$val)))) {
-                                    $this->Session->setFlash(__('El tag se a guardado'));				
+                                    $this->Session->setFlash(__('El tag se a guardado'));               
                             } 
                         }
                     }                                         
@@ -1115,19 +1115,19 @@ class BoliviaCompaniesController extends AppController {
                         $this->Session->setFlash(__('La empresa no se a podido guardar'));
                 }
                }    
-		} else {
-			$options = array('conditions' => array('Company.' . $this->Company->primaryKey => $id));
-			$this->request->data = $this->Company->find('first', $options);
-		}
-		//$groupsUsers = $this->Company->GroupsUser->find('list');
-		//$items = $this->Company->Item->find('list');
+        } else {
+            $options = array('conditions' => array('Company.' . $this->Company->primaryKey => $id));
+            $this->request->data = $this->Company->find('first', $options);
+        }
+        //$groupsUsers = $this->Company->GroupsUser->find('list');
+        //$items = $this->Company->Item->find('list');
                 $categories = $this->Category->find('all');
-		$subCategories = $this->Company->SubCategory->find('list');
-		$tags = $this->CompaniesTag->find('all',array('conditions'=>array('CompaniesTag.company_id'=>$id)));
+        $subCategories = $this->Company->SubCategory->find('list');
+        $tags = $this->CompaniesTag->find('all',array('conditions'=>array('CompaniesTag.company_id'=>$id)));
              
                 
                  /* pasar todos los tag al cajon tags */ 
-		$this->set(compact('categories','subCategories', 'tags'));
+        $this->set(compact('categories','subCategories', 'tags'));
                 $this->layout = 'ajax';
                 
         }
@@ -1136,8 +1136,8 @@ class BoliviaCompaniesController extends AppController {
             $this->loadModel('User');
             $this->loadModel('Group');
             if (!$this->User->exists($id)) {
-			throw new NotFoundException(__('Invalid user'));
-		}
+            throw new NotFoundException(__('Invalid user'));
+        }
                  if ($this->request->is(array('post', 'put'))) {
                      
                         if($this->Session->check('user')){ 
@@ -1146,12 +1146,12 @@ class BoliviaCompaniesController extends AppController {
 
                             } 
                          }
-			if ($this->User->save($this->request->data)) {
-				$this->Session->setFlash(__('The user has been saved.'));
-				//return $this->redirect(array('action' => 'index'));
-			} else {
-				$this->Session->setFlash(__('The user could not be saved. Please, try again.'));
-			}
+            if ($this->User->save($this->request->data)) {
+                $this->Session->setFlash(__('The user has been saved.'));
+                //return $this->redirect(array('action' => 'index'));
+            } else {
+                $this->Session->setFlash(__('The user could not be saved. Please, try again.'));
+            }
                  }else{
                         $options = array('conditions' => array('User.' . $this->User->primaryKey => $id));
                         $this->request->data = $this->User->find('first', $options);
@@ -1159,8 +1159,8 @@ class BoliviaCompaniesController extends AppController {
                         $this->Session->write($img);
                  } 
                 
-		$groups = $this->User->Group->find('list');
-		$this->set(compact('groups'));  
+        $groups = $this->User->Group->find('list');
+        $this->set(compact('groups'));  
                 $this->layout = "ajax";
         }
         public function img_remove(){ 

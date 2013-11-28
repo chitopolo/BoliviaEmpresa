@@ -199,24 +199,7 @@ $(document).ready(function () {
     </div>
 </section>
     
-    <div class="span12 text-center">
-            <h2><i class="icon-magic"></i> Busque una empresa, Producto o servicio</h2>                                        
-            <div id="brow" class="dropdown">                                            
-                <input name="conpanytag" class="dropdown-toggle" data-toggle="dropdown" placeholder="que buscar?" autocomplete="on" autocorrect="on" spellcheck="true" type="text" id="bolivia_companiesBrowser">
-                <ul class="dropdown-menu">
-                    <li>
-                        <ul id="browsers">
-
-                        </ul>
-                    </li>
-                </ul>
-            </div>                                       
-            <div class="btn-group" data-toggle="buttons-radio">
-                <button type="button" class="btn btn-large btn-primary" onclick="cargarFormSM('\/BoliviaEmpresa\/bolivia_companies\/companies/'+$('#bolivia_companiesBrowser').val(),'con1')" >Empresas</button>
-                <button type="button" class="btn btn-large btn-primary" onclick="cargarForm('\/BoliviaEmpresa\/Boliviacompanies\/companiesbranches/'+$('#bolivia_companiesBrowser').val(),'con1')" >Proveedores</button>                                                
-            </div>
-            <p class="lead">¡Ingrese ahora y obtenga 2 meses gratis de servicio!</p>
-    </div>
+    
     <div id='con1'></div>
 
 

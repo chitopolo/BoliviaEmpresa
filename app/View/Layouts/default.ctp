@@ -23,39 +23,39 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 <html  lang="en">
 <head>
     
-	<?php echo $this->Html->charset(); ?>
-	<title>
-		<?php echo $cakeDescription ?>:
-		<?php echo $title_for_layout; ?>
-	</title>
+ <?php echo $this->Html->charset(); ?>
+ <title>
+  <?php echo $cakeDescription ?>:
+  <?php echo $title_for_layout; ?>
+ </title>
         
         <meta http-equiv="content-script-type" content="text/javascript">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="">
-	<meta name="author" content="">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta name="description" content="">
+ <meta name="author" content="">
         
 
-	<?php
-		echo $this->Html->meta('icon');
-		//,'font-awesome','theme'
+ <?php
+  echo $this->Html->meta('icon');
+  //,'font-awesome','theme'
                 
-		echo $this->Html->css(array('bootstrap.min', 'font-awesome','theme','isotope','demo','slicebox','custom','animation'));
+  echo $this->Html->css(array('bootstrap.min', 'font-awesome','theme','isotope','demo','slicebox','custom','animation','style'));
                 
               ?>
         <!--[if lt IE 9]>
-		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
-	<!--[if IE7]>
-		<link rel="stylesheet" href="/BoliviaEmpresa1/css/font-awesome-ie7.min.css">
-	<![endif]-->
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+ <![endif]-->
+ <!--[if IE7]>
+  <link rel="stylesheet" href="/BoliviaEmpresa1/css/font-awesome-ie7.min.css">
+ <![endif]-->
         <?php
                 echo $this->Html->script(array( 'jquery-1.8.3.min','bootstrap', 'jquery.isotope.min','modernizr.custom.46884','jquery.timer','jquery.slicebox','jquery.fancybox-1.3.4','jquery.easing-1.3.pack'));
                 echo $this->Html->script('ajax',array('id'=>'ajax')); 
                 echo $this->Html->script('ckeditor/ckeditor');
-		echo $this->fetch('meta');
-		echo $this->fetch('css');
-		echo $this->fetch('script');
-	?>       
+  echo $this->fetch('meta');
+  echo $this->fetch('css');
+  echo $this->fetch('script');
+ ?>       
 
 </head>
 <body>
@@ -65,51 +65,63 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 		<div class="navbar-inner">
 			<div class="container">
 				<!-- Toggle button -->
-				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><i class="icon-cog"></i> Menu</a>
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					
+						<label class="menuCollapse">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</label>
+						<label class="menuCollapse">
+							Desplegar Menu
+						</label>
+					
+				</a>
 				<!-- Brand Logo -->
-				<a class="brand" href="index.html"><?php echo $this->Html->image('Boliviaempresa.jpg', array('alt'=>'home','style'=>'height:55px')); ?></a>
+				<a class="brand" href="index.html"><?php echo $this->Html->image('Boliviaempresa.jpg', array('alt'=>'home','style'=>'height:53px')); ?></a>
 				<!-- Navbar links -->
 				<nav class="nav-collapse collapse">
 					<ul class="nav">
 						<li><?php echo $this->Html->link(("Bienvenido"),array('')); ?></li>
-						<li><a href="about.html">Boton2</a></li>
-						<li><a href="services.html">Boton3</a></li>
+						<li>
+							<div id="brow" class="dropdown">
+
+							<input name="conpanytag" class="dropdown-toggle span3" data-toggle="dropdown" placeholder="¿Que busca?" autocomplete="on" autocorrect="on" spellcheck="true" type="text" id="bolivia_companiesBrowser">
+	                                         
+	                            <ul class="dropdown-menu" id="ulDropdown">
+	                                <li>
+	                                    <ul id="browsers">
+
+	                                    </ul>
+	                                </li>
+	                            </ul>
+	                        </div>
+
+	                    </li>
+	                    <li>
+	                    <div class="btn-group" data-toggle="buttons-radio">
+                        <button type="button" class="btn-success" onclick="cargarFormSM('\/BoliviaEmpresa\/bolivia_companies\/companies/'+$('#bolivia_companiesBrowser').val(),'con1')" >Empresas</button>
+                        <button type="button" class="btn-success" onclick="cargarForm('\/BoliviaEmpresa\/bolivia_companies\/companiesbranches/'+$('#bolivia_companiesBrowser').val(),'con1')" >Proveedores</button>                                                
+                    </div>
+</li>
+
+					
+                    	<li><a href="about.html">Contactenos</a></li>
+
+							
 						
-						<li><a href="team.html">Boton</a></li>
 						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Boton <b class="caret"></b></a>
-							<ul class="dropdown-menu">
-								<li><a href="portfolio-4-columns.html">4 Boton</a></li>
-								<li><a href="portfolio-3-columns.html">3 Boton</a></li>
-								<li><a href="portfolio-2-columns.html">2 Boton</a></li>
-								<li><a href="portfolio-project-1.html">Single Boton 1</a></li>
-								<li><a href="portfolio-project-2.html">Single Boton 2</a></li>
-							</ul>
-						</li>
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">login <b class="caret"></b></a>
-							<div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
-								<form action="[YOUR ACTION]" method="post" accept-charset="UTF-8">
-                                                                    <input id="user_username" style="margin-bottom: 15px;" type="text" name="user[username]" size="30" />
-                                                                    <input id="user_password" style="margin-bottom: 15px;" type="password" name="user[password]" size="30" />
-                                                                    <input id="user_remember_me" style="float: left; margin-right: 10px;" type="checkbox" name="user[remember_me]" value="1" />
-                                                                    <label class="string optional" for="user_remember_me"> Remember me</label>
-                                                                    <input class="btn btn-primary" style="clear: left; width: 100%; height: 32px; font-size: 13px;" type="submit" name="commit" value="Sign In" />
-                                                                  </form>
-							</div>
-						</li>
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Boton <b class="caret"></b></a>
-							<ul class="dropdown-menu">
-								<li><a href="contact-1.html">Boton 1</a></li>
-								<li><a href="contact-2.html">Boton odss 2</a></li>
-							</ul>
-						</li>
-                                        
-                                        <li>
-                                            <button type="button" class="btn btn-large btn-primary" onclick="cargarFormSM('\/BoliviaEmpresa\/BoliviaCompanies\/loginusers','con1')" >Empresas</button>                                            
-                                        </li>
-        			</ul>
+					       <a href="#" class="dropdown-toggle" data-toggle="dropdown">login <b class="caret"></b></a>
+					       <div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
+					        <form action="[YOUR ACTION]" method="post" accept-charset="UTF-8">
+                                <input id="user_username" style="margin-bottom: 15px;" type="text" name="user[username]" size="30" />
+                                <input id="user_password" style="margin-bottom: 15px;" type="password" name="user[password]" size="30" />
+                                <input class="btn btn-primary" style="clear: left; width: 100%; height: 32px; font-size: 13px;" type="submit" name="commit" value="Sign In" />
+                            </form>
+       						</div>
+      					</li>
+                    </ul>
+
 				</nav><!--/.nav-collapse -->
 			</div><!-- /.container -->
 		</div><!-- /.navbar-inner -->
