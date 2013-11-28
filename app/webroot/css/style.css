@@ -1,5 +1,6 @@
 /*CSS Rene Gumiel*****************
 navBar****************************/
+
 .navbar-inner{
 background: #c40101; /* Old browsers */
 background: -moz-linear-gradient(left,  #c40101 0%, #ede625 40%, #ede625 60%, #1f750b 100%); /* FF3.6+ */
@@ -9,6 +10,18 @@ background: -o-linear-gradient(left,  #c40101 0%,#ede625 40%,#ede625 60%,#1f750b
 background: -ms-linear-gradient(left,  #c40101 0%,#ede625 40%,#ede625 60%,#1f750b 100%); /* IE10+ */
 background: linear-gradient(to right,  #c40101 0%,#ede625 40%,#ede625 60%,#1f750b 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c40101', endColorstr='#1f750b',GradientType=1 ); /* IE6-9 */
+}
+
+.container{
+
+    box-shadow: 0px 0px 19px #444242;
+
+padding: 30px 30px 30px 30px;
+
+}
+
+.row{
+	margin-left: 0px;
 }
 
 .navbar .nav {
@@ -39,7 +52,8 @@ float: right;
  }
 
  .navbar .brand{
- 	padding: 0px;
+ 	padding: 0px 0px 0px 20px;
+
 color: #fff;
 font-size: 16px;
 font-weight: bold;

@@ -86,7 +86,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 						<li>
 							<div id="brow" class="dropdown">
 
-							<input name="conpanytag" class="dropdown-toggle span3" data-toggle="dropdown" placeholder="¿Que busca?" autocomplete="on" autocorrect="on" spellcheck="true" type="text" id="bolivia_companiesBrowser">
+							<input name="conpanytag" class="dropdown-toggle input-large" data-toggle="dropdown" placeholder="¿Que busca?" autocomplete="on" autocorrect="on" spellcheck="true" type="text" id="bolivia_companiesBrowser">
 	                                         
 	                            <ul class="dropdown-menu" id="ulDropdown">
 	                                <li>
@@ -130,8 +130,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 		</div>
 		     
 		<div id="content">
-                    <br>
-                    <br><br>
+
                     
 			<?php echo $this->Session->flash(); ?>
 
