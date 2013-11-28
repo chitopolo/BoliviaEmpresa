@@ -323,11 +323,11 @@ class BoliviaCompaniesController extends AppController {
             $this->set(compact('data'));
  
         }
-        //public function beforeFilter() {
-         //parent::beforeFilter();
-         //$this->Auth->autoRedirect = false;
-       //  $this->Auth->allow('add'); //  Letting users register themselves
-     //   }
+        public function beforeFilter() {
+        parent::beforeFilter();
+        $this->Auth->autoRedirect = false;
+         $this->Auth->allow('add'); //  Letting users register themselves
+        }
 
         public function login() {
             $this->loadModel('User');
