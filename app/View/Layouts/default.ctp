@@ -23,36 +23,39 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 <html  lang="en">
 <head>
     
-	<?php echo $this->Html->charset(); ?>
-	<title>
-		<?php echo $cakeDescription ?>:
-		<?php echo $title_for_layout; ?>
-	</title>
+ <?php echo $this->Html->charset(); ?>
+ <title>
+  <?php echo $cakeDescription ?>:
+  <?php echo $title_for_layout; ?>
+ </title>
         
         <meta http-equiv="content-script-type" content="text/javascript">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="">
-	<meta name="author" content="">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta name="description" content="">
+ <meta name="author" content="">
         
 
-	<?php
-		echo $this->Html->meta('icon');
-		//,'font-awesome','theme'
+ <?php
+  echo $this->Html->meta('icon');
+  //,'font-awesome','theme'
                 
-		echo $this->Html->css(array('bootstrap.min', 'font-awesome','theme','isotope','style','responsive'));		
-                echo $this->Html->script(array( 'jquery-1.8.3.min','bootstrap', 'jquery.isotope.min'));
-                echo $this->Html->script('ajax',array('id'=>'ajax'));                
-		echo $this->fetch('meta');
-		echo $this->fetch('css');
-		echo $this->fetch('script');
-	?>
-        
-	<!--[if lt IE 9]>
-		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
-	<!--[if IE7]>
-		<link rel="stylesheet" href="assets/styles/css/font-awesome-ie7.min.css">
-	<![endif]-->
+  echo $this->Html->css(array('bootstrap.min', 'font-awesome','theme','isotope','demo','slicebox','custom','animation','style'));
+                
+              ?>
+        <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+ <![endif]-->
+ <!--[if IE7]>
+  <link rel="stylesheet" href="/BoliviaEmpresa1/css/font-awesome-ie7.min.css">
+ <![endif]-->
+        <?php
+                echo $this->Html->script(array( 'jquery-1.8.3.min','bootstrap', 'jquery.isotope.min','modernizr.custom.46884','jquery.timer','jquery.slicebox','jquery.fancybox-1.3.4','jquery.easing-1.3.pack'));
+                echo $this->Html->script('ajax',array('id'=>'ajax')); 
+                echo $this->Html->script('ckeditor/ckeditor');
+  echo $this->fetch('meta');
+  echo $this->fetch('css');
+  echo $this->fetch('script');
+ ?>       
 
 </head>
 <body>
@@ -104,6 +107,9 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 
 					
                     	<li><a href="about.html">Contactenos</a></li>
+
+							
+						
 						<li class="dropdown">
 					       <a href="#" class="dropdown-toggle" data-toggle="dropdown">login <b class="caret"></b></a>
 					       <div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
@@ -122,8 +128,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 	</div><!-- /.navbar -->
 
 		</div>
-		<div id="myModal" class="modal hide fade" tabindex="-1" data-backdrop="static" data-keyboard="false"></div>
-                
+		     
 		<div id="content">
                     <br>
                     <br><br>
@@ -198,9 +203,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 	</div>
         <?php echo $this->fetch('scriptBottom'); ?>
 	<?php  echo $this->element('sql_dump'); ?>	
-        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>        
-	 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-	<script>window.jQuery || document.write('<script src="assets/js/jquery-1.8.3.min.js"><\/script>')</script>
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>        	 	
 
 </body>
 

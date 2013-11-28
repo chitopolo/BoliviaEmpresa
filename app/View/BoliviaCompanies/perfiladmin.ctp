@@ -1,9 +1,8 @@
 
-<div>   <?php print_r($data) ?> </div>
+<div>   <?php //print_r($data) ?> </div>
 <section id='admin'>	
     <div class="container">
-        <div class="row well">
-  	<hr>
+        <div class="row well">  	
             <div class="span2">
               <?php echo $this->Html->image($data['User']['dir'].'/'.$data['User']['filename'],array('class'=>"img-rounded")) ?>
               <?php echo $this->Html->link(__("<i class='icon-pencil'>Editar datos <br></i>"),'javascript:void(0);',array('onclick'=>"cargarForm('\/BoliviaEmpresa\/bolivia_companies\/ViewEditUser\/".$data['User']['id']."','admin')",'class' => 'ok btn btn-info ','id'=>'edit_user','escape' => false)); ?>
@@ -76,12 +75,33 @@
                                                                           </th>
 
                                                                     </tr>
-                                                                    <?php foreach ($value['Item'] as $items) {?>
+                                                                    <?php $j =0; foreach ($value['Item'] as $items) { $j++;?>
                                                                     <tr>
                                                                         <td>
-                                                                            <?php foreach ($items['CompaniesItem']['CompaniesItemsImage'] as $imgval) {
-                                                                            echo $this->Html->image($imgval['dir'].'/'.$imgval['filename'],array('style'=>'width: 100px;'));          
-                                                                               } ?>
+                                                                            
+                                                                            <div class="span6">
+                                                                                    <div id="<?=$items['name'].$j;?>" class="carousel slide">
+                                                                                            <div class="carousel-inner">
+                                                                                                <?php $i =0; foreach ($items['CompaniesItem']['CompaniesItemsImage'] as $imgval) { 
+                                                                                                    if($i==0){  $i++;?>
+                                                                                                    <div class="item active">
+                                                                                                       <?php  echo $this->Html->image($imgval['dir'].'/'.$imgval['filename'],array('class'=>"img-rounded")); ?>                                                                                                                     
+                                                                                                    </div>
+                                                                                                    <?php }else{ ?>
+                                                                                                      <div class="item">
+                                                                                                       <?php  echo $this->Html->image($imgval['dir'].'/'.$imgval['filename'],array('class'=>"img-rounded")); ?>                                                                                                                     
+                                                                                                    </div>  
+                                                                                                <?php    } 
+                                                                                                } ?>
+                                                                                            </div><!-- /.carousel-inner -->
+                                                                                            <a class="left carousel-control" href="#<?=$items['name'].$j;?>" data-slide="prev">&lsaquo;</a>
+                                                                                            <a class="right carousel-control" href="#<?=$items['name'].$j;?>" data-slide="next">&rsaquo;</a>
+                                                                                    </div><!-- /.carousel -->
+                                                                            </div>
+                                                                            
+                                                                            
+                                                                            
+                                                                             
                                                                         </td>
                                                                         <td>
                                                                            <?php echo  $items['name']; ?> 
@@ -276,4 +296,5 @@
     </div>
 
 </section>
+
 
