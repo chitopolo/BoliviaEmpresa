@@ -13,10 +13,7 @@ $(document).ready(function(){
                 'speedOut'      :   200, 
                 'overlayShow'   :   true
         });
-});
-                
-
-
+});                
 $(function(){
 	$('#regiscompany.dropdown').hover(function() {
     $(this).find('.dropdown-menu').stop(true, true).show();
@@ -337,6 +334,7 @@ $(document).ready(function () {
             tagjs.setAttribute("src", "/BoliviaEmpresa/js/ajax.js");
             document.getElementsByTagName("head")[0].appendChild(tagjs);
     }
+
     function datos_marker(lat, lng, marker){
      var mi_marker = new google.maps.LatLng(lat, lng);
      map.panTo(mi_marker);
@@ -356,27 +354,18 @@ $(document).ready(function () {
                                 LoadJS();
                                 $("#"+cont).html(data);                                                                
                                 $('#ajax').remove();
-                                LoadJSajax();                                 
+                                LoadJSajax();  
                             },                                    
 			type:"get", 
 			url:url
 		});
     }
-    function cargarFormSM(url,cont){
-		$.ajax({
-			async:true, 
-			//data:$(id).serialize(),
-                        //revisar su antecesor y no el actual la primera ves
-                        //eliminar solucion map.js 1 
-			dataType:"html", 
-			success:function (data, textStatus) {                               
-                                $("#"+cont).html(data);                                                                
-                                $('#ajax').remove();
-                                LoadJSajax(); 
-                            },                                    
-			type:"get", 
-			url:url
-		});
+    function cargarFormSM(url,cont){		
+					$('.modal-body').load(url,function(){
+						$('#myModal').modal({show:true});
+					});					                                                            
+                    $('#ajax').remove();
+                    LoadJSajax(); 
     }
     function addressMap(lat,lng){
     	var latt = lat;

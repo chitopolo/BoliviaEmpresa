@@ -39,7 +39,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
   echo $this->Html->meta('icon');
   //,'font-awesome','theme'
                 
-  echo $this->Html->css(array('bootstrap.min', 'font-awesome','theme','isotope','demo','slicebox','custom','animation','style'));
+  echo $this->Html->css(array('bootstrap.min', 'font-awesome','theme','jquery.fancybox-1.3.4','isotope','demo','slicebox','custom','animation','style'));
                 
               ?>
         <!--[if lt IE 9]>
@@ -130,6 +130,23 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 		</div>
 		     
 		<div id="content">
+
+  				<!--<a href="#" class="btn" id="openBtn">Open modal</a>-->
+
+				<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">×</button>
+							<h3>Modal header</h3>
+					</div>
+					<div class="modal-body">
+						<p>My modal content here…</p>
+					</div>
+					<div class="modal-footer">
+						<button class="btn" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+
+
 
                     
 			<?php echo $this->Session->flash(); ?>

@@ -6,7 +6,9 @@
         <div class="row-fluid">  	
             <div class="span2">
               <?php echo $this->Html->image($data['User']['dir'].'/'.$data['User']['filename'],array('class'=>"img-rounded")) ?>
+
               
+
               
             </div>
             
@@ -37,7 +39,7 @@
             </div>
             </div>
             <div class="span2">
-              <?php echo $this->Html->link(__("<i class='icon-pencil'>Editar datos <br></i>"),'javascript:void(0);',array('onclick'=>"cargarForm('\/BoliviaEmpresa\/bolivia_companies\/ViewEditUser\/".$data['User']['id']."','admin')",'class' => 'ok btn btn-info ','id'=>'edit_user','escape' => false)); ?>
+              <?php echo $this->Html->link(__("<i class='icon-pencil'>Editar datos <br></i>"),'javascript:void(0);',array('onclick'=>"cargarFormSM('\/BoliviaEmpresa\/bolivia_companies\/ViewEditUser\/".$data['User']['id']."','admin')",'class' => 'ok btn btn-info ','id'=>'edit_user','escape' => false)); ?>
             </div>
 
         </div>
@@ -61,6 +63,7 @@
                      <?php $i=0; foreach ($data['Company'] as $value) {  ?>   
                         <div class="tab-pane" id="em<?=$value['id']?>" >
                                <div class="tabbable">
+
                                         <?php echo '<div class="page-header"><address>'.
                                                       '<h3>'.$value['name'].'</h3>'.
                                           $value['address'].'<br>'.
@@ -79,6 +82,12 @@
 
                                         <ul class="nav nav-tabs">
                                             
+
+                                        <ul class="nav nav-tabs">
+                                            <?php echo $this->Html->link(__("<i class='icon-pencil'>Editar datos <br></i>"),'javascript:void(0);',array('onclick'=>"cargarFormSM('\/BoliviaEmpresa\/bolivia_companies\/ViewEditCompany/".$value['id']."','admin')",'class' => 'ok btn btn-info ','id'=>'edit_company','escape' => false)); ?>
+
+                                            <?php echo $this->Html->link('agregar','javascript:void(0)',array('onclick'=>"cargarFormSM('\/BoliviaEmpresa\/bolivia_companies\/registerBranches/1','admin')")) ?>
+
                                             <?php foreach ($value['Branch'] as $val) { ?>
                                              <li><a href="#su<?=$val['id'];?>" data-toggle="tab"><?=$val['name']?></a>
                                                  
