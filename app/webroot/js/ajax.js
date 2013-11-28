@@ -84,20 +84,13 @@ $(document).ready(function () {
             $('#brow.dropdown').removeClass('open')
           
             var val = $(this).val();
-
-              $('#brow.dropdown').find('.dropdown-menu').stop(true, true).hide();
-    $('#brow.dropdown').removeClass('open');
+             
 		$.ajax({
 			async:true, 
 			data:{id:'#bolivia_companiesBrowser',ul:'#browsers',value:val},  
 			dataType:"html", 
 			success:function (data, textStatus) {
 				$("#browsers").html(data);
-
- $('#brow.dropdown').find('.dropdown-menu').stop(true, true).show();
-    $('#brow.dropdown').addClass('open');
-      }, 
-
                                 $('#brow.dropdown').find('.dropdown-menu').stop(true, true).show();
                                 $('#brow.dropdown').addClass('open');
                         }, 
@@ -111,16 +104,6 @@ $(document).ready(function () {
 
 $(document).ready(function () {
  $("#bolivia_companiesBrowser").bind("hover", function () {          
-             $('#brow.dropdown').find('.dropdown-menu').stop(true, true).show();
-             $('#brow.dropdown').addClass('open');    
-                 
-});
-});
-
-
-
-$(document).ready(function () {
-	$("#bolivia_companiesBrowser").bind("hover", function () {          
              $('#brow.dropdown').find('.dropdown-menu').stop(true, true).show();
              $('#brow.dropdown').addClass('open');    
                  
