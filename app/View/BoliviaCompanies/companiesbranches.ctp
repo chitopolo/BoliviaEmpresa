@@ -48,4 +48,62 @@
              
     </div>
 </div>
-      
+
+
+<ul class='thumbnails portfolio'>
+
+<li class='span3 cat-1'><div class='thumbnail'><a class='js-fancybox' rel='album' href='http://www-03.ibm.com/innovation/us/watson/images/watson_at_work_intro.jpg'><img src='http://www-03.ibm.com/innovation/us/watson/images/watson_at_work_intro.jpg' alt=''></a><div class='caption'><h5>Project Name</h5><p>Description for this project</p></div></div></li>
+
+<li class='span3 cat-1'><div class='thumbnail'><a class='js-fancybox' rel='album' href='http://www-03.ibm.com/innovation/us/watson/images/watson_at_work_intro.jpg'><img src='http://www-03.ibm.com/innovation/us/watson/images/watson_at_work_intro.jpg' alt=''></a><div class='caption'><h5>Project Name</h5><p>Description for this project</p></div></div></li>
+
+<li class='span3 cat-1'><div class='thumbnail'><a class='js-fancybox' rel='album' href='http://www-03.ibm.com/innovation/us/watson/images/watson_at_work_intro.jpg'><img src='http://www-03.ibm.com/innovation/us/watson/images/watson_at_work_intro.jpg' alt=''></a><div class='caption'><h5>Project Name</h5><p>Description for this project</p></div></div></li>
+</ul>
+
+
+      	<ul class="thumbnails portfolio">
+						<li class="span3 cat-1">
+							<div class="thumbnail">
+								<a class="js-fancybox" rel="album" href="/BoliviaEmpresa/img/Boliviaempresa.jpg">
+									<img src="/BoliviaEmpresa/img/Boliviaempresa.jpg" alt="">
+								</a>
+								<div class="caption">
+									<h5>Project Name</h5>
+									<p>Description for this project</p>
+								</div>
+							</div>
+						</li>
+						<li class="span3 cat-2">
+							<div class="thumbnail">
+								<a class="js-fancybox" rel="album" href="/BoliviaEmpresa/img/Boliviaempresa.jpg">
+									<img src="/BoliviaEmpresa/img/Boliviaempresa.jpg" alt="">
+								</a>
+								<div class="caption">
+									<h5>Project Name</h5>
+									<p>Description for this project</p>
+								</div>
+							</div>
+						</li>
+						<li class="span3 cat-3">
+							<div class="thumbnail">
+								<a class="js-fancybox" rel="album" href="/BoliviaEmpresa/img/Boliviaempresa.jpg">
+									<img src="/BoliviaEmpresa/img/Boliviaempresa.jpg" alt="">
+								</a>
+								<div class="caption">
+									<h5>Project Name</h5>
+									<p>Description for this project</p>
+								</div>
+							</div>
+						</li>
+						<li class="span3 cat-2">
+							<div class="thumbnail">
+								<a class="js-fancybox" rel="album" href="/BoliviaEmpresa/img/Boliviaempresa.jpg">
+									<img src="/BoliviaEmpresa/img/Boliviaempresa.jpg" alt="">
+								</a>
+								<div class="caption">
+									<h5>Project Name</h5>
+									<p>Description for this project</p>
+								</div>
+							</div>
+						</li>
+					</ul><!-- /.thumbnails.portfolio -->
+	

@@ -12,146 +12,19 @@
 			  		mapTypeId: google.maps.MapTypeId.ROADMAP}
 				map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 				
-<<<<<<< HEAD
-			var myLatlng = new google.maps.LatLng(-17.377392677172246,-66.16903156042099);
-=======
-			var myLatlng = new google.maps.LatLng(-16.278784204577075,-63.584725856781006);
->>>>>>> 0f6d105af3b973433c7927e71b6adafd146e276c
+			var myLatlng = new google.maps.LatLng(-17.8666667,-63);
 				
 			var markerOptions = {
 				map: map,
 				position: myLatlng,
-				animation:  google.maps.Animation.DROP		
+				draggable: true		
 			};
-			marker_1 = createMarker(markerOptions);
+			marker_0 = createMarker(markerOptions);
 			
-			marker_1.set("content", "<li class='span3 cat-1'><div class='thumbnail'><a class='js-fancybox' rel='album' href='assets/images/item_large.png'><img src='assets/images/item_small.png' alt=''></a><div class='caption'><h5>Project Name</h5><p>Description for this project</p></div></div></li>");
-			
-			google.maps.event.addListener(marker_1, "click", function(event) {
-				iw.setContent(this.get("content"));
-				iw.open(map, this);
-			
-			});
-			
-			var myLatlng = new google.maps.LatLng(-16.29159537887275,-63.61412286758423);
+				google.maps.event.addListener(marker_0, "dragend", function(event) {
+					addressMap(event.latLng.lat(), event.latLng.lng());
+				});
 				
-			var markerOptions = {
-				map: map,
-				position: myLatlng,
-				animation:  google.maps.Animation.DROP		
-			};
-			marker_2 = createMarker(markerOptions);
-			
-			marker_2.set("content", "<li class='span3 cat-1'><div class='thumbnail'><a class='js-fancybox' rel='album' href='assets/images/item_large.png'><img src='assets/images/item_small.png' alt=''></a><div class='caption'><h5>Project Name</h5><p>Description for this project</p></div></div></li>");
-			
-			google.maps.event.addListener(marker_2, "click", function(event) {
-				iw.setContent(this.get("content"));
-				iw.open(map, this);
-			
-			});
-			
-			var myLatlng = new google.maps.LatLng(-17.38413232091801,-66.16693669328879);
-				
-			var markerOptions = {
-				map: map,
-				position: myLatlng,
-				animation:  google.maps.Animation.DROP		
-			};
-			marker_4 = createMarker(markerOptions);
-			
-			marker_4.set("content", "<li class='span3 cat-1'><div class='thumbnail'><a class='js-fancybox' rel='album' href='assets/images/item_large.png'><img src='assets/images/item_small.png' alt=''></a><div class='caption'><h5>Project Name</h5><p>Description for this project</p></div></div></li>");
-			
-			google.maps.event.addListener(marker_4, "click", function(event) {
-				iw.setContent(this.get("content"));
-				iw.open(map, this);
-			
-			});
-			
-			var myLatlng = new google.maps.LatLng(-17.38413232091801,-66.16693669328879);
-				
-			var markerOptions = {
-				map: map,
-				position: myLatlng,
-				animation:  google.maps.Animation.DROP		
-			};
-			marker_5 = createMarker(markerOptions);
-			
-			marker_5.set("content", "<li class='span3 cat-1'><div class='thumbnail'><a class='js-fancybox' rel='album' href='assets/images/item_large.png'><img src='assets/images/item_small.png' alt=''></a><div class='caption'><h5>Project Name</h5><p>Description for this project</p></div></div></li>");
-			
-			google.maps.event.addListener(marker_5, "click", function(event) {
-				iw.setContent(this.get("content"));
-				iw.open(map, this);
-			
-			});
-			
-			var myLatlng = new google.maps.LatLng(-17.38413232091801,-66.16693669328879);
-				
-			var markerOptions = {
-				map: map,
-				position: myLatlng,
-				animation:  google.maps.Animation.DROP		
-			};
-			marker_6 = createMarker(markerOptions);
-			
-			marker_6.set("content", "<li class='span3 cat-1'><div class='thumbnail'><a class='js-fancybox' rel='album' href='assets/images/item_large.png'><img src='assets/images/item_small.png' alt=''></a><div class='caption'><h5>Project Name</h5><p>Description for this project</p></div></div></li>");
-			
-			google.maps.event.addListener(marker_6, "click", function(event) {
-				iw.setContent(this.get("content"));
-				iw.open(map, this);
-			
-			});
-			
-			var myLatlng = new google.maps.LatLng(-16.498937247537533,-68.1464263668995);
-				
-			var markerOptions = {
-				map: map,
-				position: myLatlng,
-				animation:  google.maps.Animation.DROP		
-			};
-			marker_7 = createMarker(markerOptions);
-			
-			marker_7.set("content", "<li class='span3 cat-1'><div class='thumbnail'><a class='js-fancybox' rel='album' href='assets/images/item_large.png'><img src='assets/images/item_small.png' alt=''></a><div class='caption'><h5>Project Name</h5><p>Description for this project</p></div></div></li>");
-			
-			google.maps.event.addListener(marker_7, "click", function(event) {
-				iw.setContent(this.get("content"));
-				iw.open(map, this);
-			
-			});
-			
-			var myLatlng = new google.maps.LatLng(-17.381436943239027,-66.16816112170409);
-				
-			var markerOptions = {
-				map: map,
-				position: myLatlng,
-				animation:  google.maps.Animation.DROP		
-			};
-			marker_8 = createMarker(markerOptions);
-			
-			marker_8.set("content", "<li class='span3 cat-1'><div class='thumbnail'><a class='js-fancybox' rel='album' href='assets/images/item_large.png'><img src='assets/images/item_small.png' alt=''></a><div class='caption'><h5>Project Name</h5><p>Description for this project</p></div></div></li>");
-			
-			google.maps.event.addListener(marker_8, "click", function(event) {
-				iw.setContent(this.get("content"));
-				iw.open(map, this);
-			
-			});
-			
-			var myLatlng = new google.maps.LatLng(-17.383938423991257,-66.16677911350916);
-				
-			var markerOptions = {
-				map: map,
-				position: myLatlng,
-				animation:  google.maps.Animation.DROP		
-			};
-			marker_9 = createMarker(markerOptions);
-			
-			marker_9.set("content", "<li class='span3 cat-1'><div class='thumbnail'><a class='js-fancybox' rel='album' href='assets/images/item_large.png'><img src='assets/images/item_small.png' alt=''></a><div class='caption'><h5>Project Name</h5><p>Description for this project</p></div></div></li>");
-			
-			google.maps.event.addListener(marker_9, "click", function(event) {
-				iw.setContent(this.get("content"));
-				iw.open(map, this);
-			
-			});
-			
 			fitMapToBounds();
 			
 			
