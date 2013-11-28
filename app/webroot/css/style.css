@@ -1,31 +1,134 @@
 /*CSS Rene Gumiel*****************
 navBar****************************/
-input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], input[type="radio"], input[type="checkbox"] {
-height: 35px;
+.navbar-inner{
+background: #c40101; /* Old browsers */
+background: -moz-linear-gradient(left,  #c40101 0%, #ede625 40%, #ede625 60%, #1f750b 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right top, color-stop(0%,#c40101), color-stop(40%,#ede625), color-stop(60%,#ede625), color-stop(100%,#1f750b)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(left,  #c40101 0%,#ede625 40%,#ede625 60%,#1f750b 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(left,  #c40101 0%,#ede625 40%,#ede625 60%,#1f750b 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(left,  #c40101 0%,#ede625 40%,#ede625 60%,#1f750b 100%); /* IE10+ */
+background: linear-gradient(to right,  #c40101 0%,#ede625 40%,#ede625 60%,#1f750b 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c40101', endColorstr='#1f750b',GradientType=1 ); /* IE6-9 */
 }
 
-textarea:focus,
-input[type="text"]:focus,
-input[type="password"]:focus,
-input[type="datetime"]:focus,
-input[type="datetime-local"]:focus,
-input[type="date"]:focus,
-input[type="month"]:focus,
-input[type="time"]:focus,
-input[type="week"]:focus,
-input[type="number"]:focus,
-input[type="email"]:focus,
-input[type="url"]:focus,
-input[type="search"]:focus,
-input[type="tel"]:focus,
-input[type="color"]:focus,
-.uneditable-input:focus {
-  border-color: #654123;
-  outline: 0;
-  outline: thin dotted \9;
-  /* IE6-9 */
-
-  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(82,168,236,.6);
-  -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(82,168,236,.6);
-  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(82,168,236,.6);
+.navbar .nav {
+float: right;
 }
+
+.navbar .nav>li{
+	background:none;
+	border-top:none;
+	border-left:#0C2305;
+}
+.navbar .nav>li a{
+	margin: 0px;
+	padding: 0px;
+	padding-top: 17px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 16px;
+	color: #0C2305;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+
+.navbar .nav>li a:hover {
+
+ }
+
+ .navbar .brand{
+ 	padding: 0px;
+color: #fff;
+font-size: 16px;
+font-weight: bold;
+text-shadow: none;
+ }
+
+ .navbar .brand>img{
+	height:75px;
+ }
+
+ #bolivia_companiesBrowser{
+ 	border-radius: 5px;
+ 	margin-top: 17px;
+ 	margin-left: 14px;
+ 	padding-top: 0px;
+ 	padding-bottom: 0px;
+ 	padding-left: 10px;
+ 	height: 25px;
+ }
+
+ .navbar .btn-group{
+ 	padding: 0px;
+	margin: 0px;
+	height: 35px;
+	margin-left: 0px;
+	top: 18px;
+	border-radius: 10px;
+ } 
+
+ .navbar .btn-group>button{
+	margin: 0px;
+	margin-left: 0px;
+	margin-top: 0px;
+	padding: 1px;
+	-webkit-transition: all 0.4s ease-in-out;
+	-moz-transition: all 0.4s ease-in-out;
+	-o-transition: all 0.4s ease-in-out;
+	transition: all 0.4s ease-in-out;
+ } 
+
+ .navbar .btn-group>button:hover{
+ 	background: #4E974E;
+ } 
+
+  .navbar .btn-group>button:focus {
+ 	background: #4E974E;
+ 	border-color: #4E974E;
+ 	margin: none;
+ } 
+
+ .navbar .menuCollapse{
+ 	display: inline-block;
+ 	height:13px;
+ 	line-height:25px;
+ 	padding: 0px;
+ 	margin: 0px;
+ }
+
+#ulDropdown{
+	padding: 0px;
+	margin-left: 14px;
+	background:#000000;
+	opacity: 0.9;
+    filter:alpha(opacity=90);
+    -moz-opacity:0.9;
+    -khtml-opacity: 0.9;
+}
+
+#brow{
+	width:100%;
+}
+
+#browsers{
+	list-style: none;
+}
+
+#browsers>li{
+	width: 273px;
+}
+
+#browsers>li>a{
+	color :#FFFFFF;
+	padding: 0px;
+	padding-right: 120px;
+}
+
+#browsers>li>a:hover{
+	color :#89E224;
+	background:none;
+	
+}
+

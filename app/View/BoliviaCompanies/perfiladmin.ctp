@@ -32,7 +32,7 @@
                         
                          <?php $i=0; foreach ($data['Company'] as $value) {?>
                             <li><a href="#em<?=$value['id']?>" data-toggle="tab"><?=$value['name'] ?></a>
-                                <?php echo $this->Html->link(__("<i class='icon-pencil'>Editar datos <br></i>"),'javascript:void(0);',array('onclick'=>"cargarForm('\/BoliviaEmpresa\/bolivia_companies\/ViewEditCompany/".$value['id']."','admin')",'class' => 'ok btn btn-info ','id'=>'edit_company','escape' => false)); ?>
+                                 
                             
                             </li>
                             
@@ -43,10 +43,12 @@
                         <div class="tab-pane" id="em<?=$value['id']?>" >
                                <div class="tabbable">
                                         <ul class="nav nav-tabs">
+                                            <?php echo $this->Html->link(__("<i class='icon-pencil'>Editar datos <br></i>"),'javascript:void(0);',array('onclick'=>"cargarForm('\/BoliviaEmpresa\/bolivia_companies\/ViewEditCompany/".$value['id']."','admin')",'class' => 'ok btn btn-info ','id'=>'edit_company','escape' => false)); ?>
+
                                             <?php echo $this->Html->link('agregar','javascript:void(0)',array('onclick'=>"cargarForm('\/BoliviaEmpresa\/bolivia_companies\/registerBranches/1','admin')")) ?>
                                             <?php foreach ($value['Branch'] as $val) { ?>
                                              <li><a href="#su<?=$val['id'];?>" data-toggle="tab"><?=$val['name']?></a>
-                                                 <?php echo $this->Html->link('editar','javascript:void(0)',array('onclick'=>"cargarForm('\/BoliviaEmpresa\/bolivia_companies\/ViewEditBranch/".$val['id']."','admin')")) ?> 
+                                                 
                                              
                                              </li>
                                            <?php  } ?> 

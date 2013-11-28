@@ -12,7 +12,7 @@
 			  		mapTypeId: google.maps.MapTypeId.ROADMAP}
 				map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 				
-			var myLatlng = new google.maps.LatLng(-17.38414,-66.166702);
+			var myLatlng = new google.maps.LatLng(-17.377392677172246,-66.16903156042099);
 				
 			var markerOptions = {
 				map: map,
