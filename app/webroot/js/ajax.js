@@ -2,14 +2,26 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-$(function(){
-	$('#brow.dropdown').hover(function() {
+
+$(document).ready(function(){
+        // Fancybox galllery
+        $("a.js-fancybox").fancybox({
+                'transitionIn'  :   'elastic',
+                'transitionOut' :   'elastic',
+                'speedIn'       :   600, 
+                'speedOut'      :   200, 
+                'overlayShow'   :   true
+        });
+});
+                
+$(function(){    
+    /*$('#brow.dropdown').hover(function() {
     $(this).find('.dropdown-menu').stop(true, true).show();
     $(this).addClass('open');
 }, 	function() {
   	$(this).find('.dropdown-menu').stop(true, true).hide();
     $(this).removeClass('open');
-	});
+	});*/   
 });
 $(function(){
 	$('#regiscompany.dropdown').hover(function() {
@@ -20,6 +32,7 @@ $(function(){
     $(this).removeClass('open');
 	});
 });
+
 $(document).ready(function () {
 	$("#ola").bind("click", function (event) {
             alert('ols');
@@ -57,20 +70,36 @@ $(document).ready(function () {
 			url:"\/BoliviaEmpresa\/bolivia_companies\/registercompaniesitems"
 		});
 });});
-
+$(document).click(function (event) {    		
+     $('#brow.dropdown').find('.dropdown-menu').stop(true, true).hide();
+     $('#brow.dropdown').removeClass('open')
+});
 $(document).ready(function () {
-	$("#bolivia_companiesBrowser").bind("keyup", function (event) {              
+	$("#bolivia_companiesBrowser").bind("keyup", function () {  
+            $('#brow.dropdown').find('.dropdown-menu').stop(true, true).hide();
+            $('#brow.dropdown').removeClass('open')
+          
             var val = $(this).val();
 		$.ajax({
 			async:true, 
 			data:{id:'#bolivia_companiesBrowser',ul:'#browsers',value:val},  
 			dataType:"html", 
 			success:function (data, textStatus) {
-				$("#browsers").html(data);}, 
+				$("#browsers").html(data);
+                                $('#brow.dropdown').find('.dropdown-menu').stop(true, true).show();
+                                $('#brow.dropdown').addClass('open');
+                        }, 
 			type:"post", 
 			url:"\/BoliviaEmpresa\/bolivia_companies\/tags"
 		});
         });
+});
+$(document).ready(function () {
+	$("#bolivia_companiesBrowser").bind("hover", function () {          
+             $('#brow.dropdown').find('.dropdown-menu').stop(true, true).show();
+             $('#brow.dropdown').addClass('open');    
+                 
+});
 });
 $(document).ready(function () {
 	$("#registercompanytag").bind("keyup", function (event) {
@@ -216,15 +245,15 @@ $(document).ready(function () {
 });}); 
 $(document).ready(function () {
     
-          $('#loginusersLoginusersForm').bind("submit",function(event) {
+          $('#UserLoginForm').bind("submit",function(event) {
           event.preventDefault();          
             $.ajax({
             async:true,            
-            data:$("#loginusersLoginusersForm").serialize(),
+            data:$("#UserLoginForm").serialize(),
             dataType: 'html', 
             success:function (data, textStatus) {
-                $('#con1').html(data);
-                 $('#ajax').remove();
+              //  $('#con1').html(data);
+                $('#ajax').remove();
                  LoadJSajax(); 
             }, 
             type:"post", 

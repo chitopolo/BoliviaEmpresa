@@ -50,9 +50,48 @@ class BoliviaCompaniesController extends AppController {
  */     
         public function index(){
             $this->loadModel('Ad');
+            $this->loadModel('Company');
+            $company = $this->Company->find('all',array('limit'=>8,'recursive'  => 2));
             $data = $this->Ad->find('all',array('condition' => array('Ad.'. $this->Ad->state => 'active')));
-            $this->set(compact('data'));
+            $this->set(compact('data','company'));
             
+        }
+        public function viewEditStory($id=1){
+            $this->loadModel('Story');
+            if (!$this->Story->exists($id)) {
+			throw new NotFoundException(__('Invalid story'));
+		}
+		if ($this->request->is(array('post', 'put'))) {
+			if ($this->Story->save($this->request->data)) {
+				$this->Session->setFlash(__('The story has been saved.'));
+				return $this->redirect(array('action' => 'index'));
+			} else {
+				$this->Session->setFlash(__('The story could not be saved. Please, try again.'));
+			}
+		} else {
+			$options = array('conditions' => array('Story.' . $this->Story->primaryKey => $id));
+			$this->request->data = $this->Story->find('first', $options);
+		}
+        }
+        public function stories(){
+            $this->loadModel('Story');
+            $data = $this->Story->find('first',array('condition'=>array('Story.id'=>1)));
+            $this->set(compact('data'));
+          //  $this->layout = 'ajax';
+           
+        }
+        public function contacts(){
+            $this->loadModel('Contact');
+            if ($this->request->is('post')) {
+			$this->Contact->create();
+			if ($this->Contact->save($this->request->data)) {
+				$this->Session->setFlash(__('The contact has been saved.'));
+				//return $this->redirect(array('action' => 'index'));
+			} else {
+				$this->Session->setFlash(__('The contact could not be saved. Please, try again.'));
+			}
+	    }
+          
         }
         public function perfilCompany($id=null){
             $this->loadModel('Company');
@@ -284,23 +323,29 @@ class BoliviaCompaniesController extends AppController {
             $this->set(compact('data'));
  
         }
-        public function beforeFilter() {
-         parent::beforeFilter();
-         $this->Auth->autoRedirect = false;
-        $this->Auth->allow('add'); //  Letting users register themselves
-        }
+        //public function beforeFilter() {
+         //parent::beforeFilter();
+         //$this->Auth->autoRedirect = false;
+       //  $this->Auth->allow('add'); //  Letting users register themselves
+     //   }
 
         public function login() {
             $this->loadModel('User');
             if ($this->request->is('post')) {
-                if ($this->Auth->login()) {
-                    return $this->redirect($this->Auth->redirect());
+                if ($this->Auth->login()) {                           
+                    $datos = $this->User->find('first',array('conditions'=>array('User.id'=>$this->Session->read('Auth.User.id')),'recursive'=>1));                                        
+                    $ss = array('us_group'=>$datos['Group']);
+                    $this->Session->write($ss);
+                }else{
+                   $this->Session->setFlash(__('No es correcto el nombre de usuario o password'));
                 }
-                $this->Session->setFlash(__('Invalid username or password, try again'));
+                
             }
+        // $this->layout = 'ajax';
         }
 
         public function logout() {
+             $this->Session->delete('us_group');             
             return $this->redirect($this->Auth->logout());
         }
         
@@ -429,7 +474,8 @@ class BoliviaCompaniesController extends AppController {
                 //posición de los markers
                 $marker['position'] = $Branch['latitude'].','.$Branch['length'];
                 //infowindow de los markers(ventana de información)    
-                $marker['infowindow_content'] = $Branch['name']; //"<section class='block-large bg-alt'><div class='container'><div class='row'><div class='span3'><img class='img-rounded' src='assets/images/service_1.jpg' alt=''></div><div class='span9'><h2>Satisfation Guaranteed</h2><p class='lead'>Boreal has revamped the idea of convergence. Quick: do you have a infinitely reconfigurable plan for handling new returns-on-investment? A company that can brand faithfully will (at some point in the future) be able to strategize elegantly.</p><a href='#' class='btn btn-large btn-primary'>Contact Us!</a></div></div></div></section>";
+                $marker['infowindow_content'] =  "<li class='span3 cat-1'><div class='thumbnail'><a class='js-fancybox' rel='album' href='assets/images/item_large.png'><img src='assets/images/item_small.png' alt=''></a><div class='caption'><h5>Project Name</h5><p>Description for this project</p></div></div></li>";
+ //$Branch['name']; //"<section class='block-large bg-alt'><div class='container'><div class='row'><div class='span3'><img class='img-rounded' src='assets/images/service_1.jpg' alt=''></div><div class='span9'><h2>Satisfation Guaranteed</h2><p class='lead'>Boreal has revamped the idea of convergence. Quick: do you have a infinitely reconfigurable plan for handling new returns-on-investment? A company that can brand faithfully will (at some point in the future) be able to strategize elegantly.</p><a href='#' class='btn btn-large btn-primary'>Contact Us!</a></div></div></div></section>";
                 //la id del marker
                 $marker['id'] = $Branch['id']; 
                 $map->add_marker($marker);

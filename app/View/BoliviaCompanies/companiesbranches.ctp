@@ -1,35 +1,20 @@
-<?php print_r($data); ?> 
+<?php //print_r($data); ?> 
 <style type="text/css">
 	
 		#sidebar{
 			position: absolute;
-			width: 18%;
-			height: 590px;
-			background: #222;
-			color: #fff;
-			margin-left: 80%;
-			margin-top: -600px;
-			border: 5px solid #fff;
-		}
-		ul{
-			padding: 0;
-			text-align: justify;		
-		}
-
-		 li{
-			cursor: pointer;
-			border-top: 1px solid #fff;
-			background: #c3c3c3; 
-			list-style: none;
-			color: #111
-		}
-		li:hover{
-			background: #fefefe;
-		}
+			width: 115px;
+                        right: 0px;
+                        top: 55px;
+                        z-index: 1000;
+		}		
 	</style>
 <div class='row-fluid'>
     <div class='span12'>
-         <?php echo $dato['map']['html']; ?>
+        <ul class='thumbnails portfolio'>
+           <?php echo $dato['map']['html']; ?>  
+        </ul>
+        
                 <div id="sidebar">
                     <div id="accordion">
                         <?php foreach ($text as $val) { ?> 

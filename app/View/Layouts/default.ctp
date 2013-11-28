@@ -39,20 +39,23 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 		echo $this->Html->meta('icon');
 		//,'font-awesome','theme'
                 
-		echo $this->Html->css(array('bootstrap.min', 'font-awesome','theme','isotope'));		
-                echo $this->Html->script(array( 'jquery-1.8.3.min','bootstrap', 'jquery.isotope.min'));
-                echo $this->Html->script('ajax',array('id'=>'ajax'));                
-		echo $this->fetch('meta');
-		echo $this->fetch('css');
-		echo $this->fetch('script');
-	?>
-        
-	<!--[if lt IE 9]>
+		echo $this->Html->css(array('bootstrap.min', 'font-awesome','theme','isotope','demo','slicebox','custom','animation'));
+                
+              ?>
+        <!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 	<!--[if IE7]>
-		<link rel="stylesheet" href="assets/styles/css/font-awesome-ie7.min.css">
+		<link rel="stylesheet" href="/BoliviaEmpresa1/css/font-awesome-ie7.min.css">
 	<![endif]-->
+        <?php
+                echo $this->Html->script(array( 'jquery-1.8.3.min','bootstrap', 'jquery.isotope.min','modernizr.custom.46884','jquery.timer','jquery.slicebox','jquery.fancybox-1.3.4','jquery.easing-1.3.pack'));
+                echo $this->Html->script('ajax',array('id'=>'ajax')); 
+                echo $this->Html->script('ckeditor/ckeditor');
+		echo $this->fetch('meta');
+		echo $this->fetch('css');
+		echo $this->fetch('script');
+	?>       
 
 </head>
 <body>
@@ -84,13 +87,16 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 							</ul>
 						</li>
 						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Boton <b class="caret"></b></a>
-							<ul class="dropdown-menu">
-								<li><a href="blog-1.html">Boton 1</a></li>
-								<li><a href="blog-2.html">Boton 2</a></li>
-								<li><a href="blog-3.html">Boton 3</a></li>
-								<li><a href="single-post.html">Single Boton</a></li>
-							</ul>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">login <b class="caret"></b></a>
+							<div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
+								<form action="[YOUR ACTION]" method="post" accept-charset="UTF-8">
+                                                                    <input id="user_username" style="margin-bottom: 15px;" type="text" name="user[username]" size="30" />
+                                                                    <input id="user_password" style="margin-bottom: 15px;" type="password" name="user[password]" size="30" />
+                                                                    <input id="user_remember_me" style="float: left; margin-right: 10px;" type="checkbox" name="user[remember_me]" value="1" />
+                                                                    <label class="string optional" for="user_remember_me"> Remember me</label>
+                                                                    <input class="btn btn-primary" style="clear: left; width: 100%; height: 32px; font-size: 13px;" type="submit" name="commit" value="Sign In" />
+                                                                  </form>
+							</div>
 						</li>
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Boton <b class="caret"></b></a>
@@ -110,8 +116,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 	</div><!-- /.navbar -->
 
 		</div>
-		<div id="myModal" class="modal hide fade" tabindex="-1" data-backdrop="static" data-keyboard="false"></div>
-                
+		     
 		<div id="content">
                     <br>
                     <br><br>
@@ -186,9 +191,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 	</div>
         <?php echo $this->fetch('scriptBottom'); ?>
 	<?php  echo $this->element('sql_dump'); ?>	
-        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>        
-	 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-	<script>window.jQuery || document.write('<script src="assets/js/jquery-1.8.3.min.js"><\/script>')</script>
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>        	 	
 
 </body>
 

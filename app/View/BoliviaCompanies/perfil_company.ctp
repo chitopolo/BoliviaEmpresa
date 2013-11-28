@@ -98,7 +98,10 @@
 	</style> 
         <div class='row-fluid'>
             <div class='span10'>
-                <?php echo $dato['map']['html']; ?>
+               
+                  <?php echo $dato['map']['html']; ?>  
+               
+                
             </div>
             <div class="span2" id="sidebar">
                     <ul>
