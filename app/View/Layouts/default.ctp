@@ -49,7 +49,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
   <link rel="stylesheet" href="/BoliviaEmpresa1/css/font-awesome-ie7.min.css">
  <![endif]-->
         <?php
-                echo $this->Html->script(array( 'jquery-1.8.3.min','bootstrap', 'jquery.isotope.min','modernizr.custom.46884','jquery.timer','jquery.slicebox','jquery.fancybox-1.3.4','jquery.easing-1.3.pack'));
+                echo $this->Html->script(array( 'jquery-1.8.3.min','bootstrap', 'jquery.isotope.min','modernizr.custom.46884','jquery.timer','jquery.slicebox','jquery.fancybox-1.3.4'));
                 echo $this->Html->script('ajax',array('id'=>'ajax')); 
                 echo $this->Html->script('ckeditor/ckeditor');
   echo $this->fetch('meta');
@@ -114,12 +114,32 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
                                                 <li class="dropdown">
                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">login <b class="caret"></b></a>
                                                <div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
-                                                <form action="[YOUR ACTION]" method="post" accept-charset="UTF-8">
-                                <input id="user_username" style="margin-bottom: 15px;" type="text" name="user[username]" size="30" />
-                                <input id="user_password" style="margin-bottom: 15px;" type="password" name="user[password]" size="30" />
-                                <input class="btn btn-primary" style="clear: left; width: 100%; height: 32px; font-size: 13px;" type="submit" name="commit" value="Sign In" />
-                            </form>
+                                                    <div class="users form">                                            
+                                                        <?php                                                        
+                                                        echo $this->Form->create('User'); ?>
+                                                            <fieldset>                                                                
+                                                                <div class="row-fluid">
+                                                                    <dvi  class="span2" style="text-align: center;">                                                                         
+                                                                        <samp style="position: relative;top: 9px;"><i class="icon-user icon-white"></i></samp>
+                                                                    </dvi>
+                                                                    <dvi class="span10">
+                                                                         <?php echo $this->Form->input('username',array('label'=>"",'class'=>"span12",'style'=>'height: 30px;')); ?>
+                                                                    </dvi>
                                                        </div>
+                                                                <div class="row-fluid">
+                                                                    <dvi  class="span2" style="text-align: center;">                                                                         
+                                                                        <samp style="position: relative;top: 9px;"> <i class="icon-asterisk"></i></samp>
+                                                                    </dvi>
+                                                                    <dvi class="span10">
+                                                                        <?php echo $this->Form->input('password',array('label'=>'','class'=>'span12','style'=>'height: 30px;')); ?>
+                                                                    </dvi>
+                                                                </div>               
+                                                                
+                                                            </fieldset>
+                                                        <?php echo $this->Form->end(array('label' => __('Login', true), 'escape' => false ,'class' => 'btn btn-large btn-primary text-la','style'=>'width: 100%;')); ?>
+                                                        <?php echo $this->Form->input('registrar',array ('label'=>'','type' => 'button' ,'class' => 'btn btn-large btn-primary text-la','onclick'=>"cargarFormSM('\/BoliviaEmpresa\/bolivia_companies\/registeruser\/','#content')",'style'=>'width: 100%;')); ?>                                                                                                                
+                                                     </div>                            
+       						</div>
                                               </li>
                     </ul>
                     
@@ -136,23 +156,6 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
                 </div>
                      
                 <div id="content">
-
-                                  <!--<a href="#" class="btn" id="openBtn">Open modal</a>-->
-
-                                <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog">
-                                        <div class="modal-header">
-                                                <button type="button" class="close" data-dismiss="modal">×</button>
-                                                        <h3>Modal header</h3>
-                                        </div>
-                                        <div class="modal-body">
-                                                <p>My modal content here…</p>
-                                        </div>
-                                        <div class="modal-footer">
-                                                <button class="btn" data-dismiss="modal">Close</button>
-                                        </div>
-                                </div>
-
-
 
                     
                         <?php echo $this->Session->flash(); ?>

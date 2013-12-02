@@ -191,7 +191,7 @@ $(document).ready(function () {
             url:"\/BoliviaEmpresa\/bolivia_companies\/registeruser"
               });   
           }else{
-              alert('seleccione por lo menos 1 tipo de usu');
+              alert('por lo menos 1 tipo de usu');
           }
          
 });});    
@@ -360,10 +360,10 @@ $(document).ready(function () {
                         url:url
                 });
     }
-    function cargarFormSM(url,cont){                
-                                        $('.modal-body').load(url,function(){
-                                                $('#myModal').modal({show:true});
-                                        });                                                                                                    
+    function cargarFormSM(url,id){                
+                    $(id).load(url,function(){
+                            //$('#myModal').modal({show:true});
+                    });                                                                                                    
                     $('#ajax').remove();
                     LoadJSajax(); 
     }
