@@ -12,6 +12,7 @@
 			  		mapTypeId: google.maps.MapTypeId.ROADMAP}
 				map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 				
+<<<<<<< HEAD
 			var myLatlng = new google.maps.LatLng(-16.278784204577075,-63.584725856781006);
 				
 			var markerOptions = {
@@ -148,6 +149,8 @@
 			
 			});
 			
+=======
+>>>>>>> fa496e001a160832c805609629e3905922a05677
 			fitMapToBounds();
 			
 			
