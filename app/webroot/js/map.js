@@ -12,23 +12,6 @@
 			  		mapTypeId: google.maps.MapTypeId.ROADMAP}
 				map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 				
-<<<<<<< HEAD
-			var myLatlng = new google.maps.LatLng(-16.278784204577075,-63.584725856781006);
-=======
-			var myLatlng = new google.maps.LatLng(-17.8666667,-63);
->>>>>>> ef6315faccf39fe0219682f022c756299c9a0550
-				
-			var markerOptions = {
-				map: map,
-				position: myLatlng,
-				draggable: true		
-			};
-			marker_0 = createMarker(markerOptions);
-			
-				google.maps.event.addListener(marker_0, "dragend", function(event) {
-					addressMap(event.latLng.lat(), event.latLng.lng());
-				});
-				
 			fitMapToBounds();
 			
 			

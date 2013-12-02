@@ -78,16 +78,19 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 					
 				</a>
 				<!-- Brand Logo -->
-				<a class="brand" href="index.html"><?php echo $this->Html->image('Boliviaempresa.jpg', array('alt'=>'home','style'=>'height:53px')); ?></a>
+				<div>
+					<a class="brand" href="index.html"><?php echo $this->Html->image('Boliviaempresa.png', array('alt'=>'home','style'=>'height:53px')); ?></a>
+				</div>
+				
 				<!-- Navbar links -->
-				<nav class="nav-collapse collapse">
-					<ul class="nav">
-						<li><?php echo $this->Html->link(("Bienvenido"),array('')); ?></li>
-						<li>
-							<div id="brow" class="dropdown">
+				<nav class="nav-collapse collapse pull-right">
+					<div id="brow" class="dropdown">
 
 							<input name="conpanytag" class="dropdown-toggle input-large" data-toggle="dropdown" placeholder="¿Que busca?" autocomplete="on" autocorrect="on" spellcheck="true" type="text" id="bolivia_companiesBrowser">
-	                                         
+	                                         <div class="btn-group" data-toggle="buttons-radio">
+                        <button type="button" class="btn" onclick="cargarFormSM('\/BoliviaEmpresa\/bolivia_companies\/companies/'+$('#bolivia_companiesBrowser').val(),'con1')" >Empresas</button>
+                        <button type="button" class="btn" onclick="cargarForm('\/BoliviaEmpresa\/bolivia_companies\/companiesbranches/'+$('#bolivia_companiesBrowser').val(),'con1')" >Proveedores</button>                                                
+                    </div>
 	                            <ul class="dropdown-menu" id="ulDropdown">
 	                                <li>
 	                                    <ul id="browsers">
@@ -97,15 +100,13 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 	                            </ul>
 	                        </div>
 
-	                    </li>
-	                    <li>
-	                    <div class="btn-group" data-toggle="buttons-radio">
-                        <button type="button" class="btn-success" onclick="cargarFormSM('\/BoliviaEmpresa\/bolivia_companies\/companies/'+$('#bolivia_companiesBrowser').val(),'con1')" >Empresas</button>
-                        <button type="button" class="btn-success" onclick="cargarForm('\/BoliviaEmpresa\/bolivia_companies\/companiesbranches/'+$('#bolivia_companiesBrowser').val(),'con1')" >Proveedores</button>                                                
-                    </div>
-</li>
+	                  
 
-					
+	                    <div >
+					<ul class="nav">
+						<li><?php echo $this->Html->link(("Bienvenido"),array('')); ?></li>
+							
+												
                     	<li><a href="about.html">Contactenos</a></li>
 
 							
@@ -121,8 +122,13 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
        						</div>
       					</li>
                     </ul>
+                    
+                    	
+                    </div>
+                    
 
-				</nav><!--/.nav-collapse -->
+				</nav>
+				<!--/.nav-collapse -->
 			</div><!-- /.container -->
 		</div><!-- /.navbar-inner -->
 	</div><!-- /.navbar -->

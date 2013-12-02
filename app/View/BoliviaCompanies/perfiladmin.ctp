@@ -72,9 +72,9 @@
                                                     
                                                                                  
                                            '</address>'.
-                                          $this->Html->link(__("<i class='icon-edit'>Editar datos <br></i>"),'javascript:void(0);',array('onclick'=>"cargarForm('\/BoliviaEmpresa\/bolivia_companies\/ViewEditCompany/".$value['id']."','admin')",'class' => 'ok btn btn-info ','id'=>'edit_company','escape' => false)).
+                                          $this->Html->link(__("<i class='icon-edit'>Editar datos <br></i>"),'javascript:void(0);',array('onclick'=>"cargarFormSM('\/BoliviaEmpresa\/bolivia_companies\/ViewEditCompany/".$value['id']."','admin')",'class' => 'ok btn btn-info ','id'=>'edit_company','escape' => false)).
 
-                                         $this->Html->link(__("<i class='icon-plus'>Agregar Sucursal<br></i>"),'javascript:void(0);',array('onclick'=>"cargarForm('\/BoliviaEmpresa\/bolivia_companies\/registerBranches/1','admin')",'class' => 'ok btn btn-info ','id'=>'edit_company','escape' => false)).
+                                         $this->Html->link(__("<i class='icon-plus'>Agregar Sucursal<br></i>"),'javascript:void(0);',array('onclick'=>"cargarFormSM('\/BoliviaEmpresa\/bolivia_companies\/registerBranches/1','admin')",'class' => 'ok btn btn-info ','id'=>'edit_company','escape' => false)).
                                          '</div>';
 
                                            ;
@@ -84,9 +84,7 @@
                                             
 
                                         <ul class="nav nav-tabs">
-                                            <?php echo $this->Html->link(__("<i class='icon-pencil'>Editar datos <br></i>"),'javascript:void(0);',array('onclick'=>"cargarFormSM('\/BoliviaEmpresa\/bolivia_companies\/ViewEditCompany/".$value['id']."','admin')",'class' => 'ok btn btn-info ','id'=>'edit_company','escape' => false)); ?>
-
-                                            <?php echo $this->Html->link('agregar','javascript:void(0)',array('onclick'=>"cargarFormSM('\/BoliviaEmpresa\/bolivia_companies\/registerBranches/1','admin')")) ?>
+                                            
 
                                             <?php foreach ($value['Branch'] as $val) { ?>
                                              <li><a href="#su<?=$val['id'];?>" data-toggle="tab"><?=$val['name']?></a>
