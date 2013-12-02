@@ -32,6 +32,9 @@ App::import('Lib','Googlemaps');
  */
 class BoliviaCompaniesController extends AppController {
 
+    
+    
+    public $components = array('RequestHandler');
     public $helpers = array('Js','FormEnum','Session');
 /**
  * This controller does not use a model
@@ -247,7 +250,7 @@ class BoliviaCompaniesController extends AppController {
                      $it1 =0;
                      foreach ($this->Consultation->find('all',array('conditions'=>array('Consultation.branch_id'=>$branc['id']),'recursive'=>-1)) as $cons) {                       
                              $data['Branch'][$it]['Consultation'][$it1] = $cons['Consultation'];
-                             $usss =  $this->User->query("select `User`.`id`, `User`.`first_name`, `User`.`last_name`, `User`.`date_of_birth`, `User`.`ci`, `User`.`sex`, `User`.`address`, `User`.`phone`, `User`.`cellular`, `User`.`e-mail`, `User`.`filename`, `User`.`dir`, `User`.`login`, `User`.`password`, `User`.`created`, `User`.`modified`, `User`.`state` from `bolivia_e`.`groups_users` AS `GroupsUser` , `bolivia_e`.`users` AS `User` where GroupsUser.id = ".$cons['Consultation']['groups_user_id']." and User.id = GroupsUser.user_id   LIMIT 1");                           
+                             $usss =  $this->User->query("select `User`.`id`, `User`.`first_name`, `User`.`last_name`, `User`.`date_of_birth`, `User`.`ci`, `User`.`sex`, `User`.`address`, `User`.`phone`, `User`.`cellular`, `User`.`e-mail`, `User`.`filename`, `User`.`dir`, `User`.`username`, `User`.`password`, `User`.`created`, `User`.`modified`, `User`.`state` from `bolivia_e`.`groups_users` AS `GroupsUser` , `bolivia_e`.`users` AS `User` where GroupsUser.id = ".$cons['Consultation']['groups_user_id']." and User.id = GroupsUser.user_id   LIMIT 1");                           
                              $data['Branch'][$it]['Consultation'][$it1]['User'] =  $usss[$it1]['User'];
                           $it1++; 
                      }
@@ -1017,6 +1020,8 @@ class BoliviaCompaniesController extends AppController {
             $this->loadModel('User');
             $this->loadModel('Group');
             if ($this->request->is('post')) {
+                //validar q exista la session o vampo requerido imagen o cargar una por defauft
+                
                 foreach ($this->Session->read('user') as $val){        
                 $this->request->data['User']['filename']=$val['image'];
                  break;
@@ -1029,7 +1034,7 @@ class BoliviaCompaniesController extends AppController {
                         $this->Session->setFlash(__('El usuario no fue guardado'));
                 }
             }
-            $groups = $this->User->Group->find('list');
+            $groups = $this->User->Group->find('list',array('conditions'=>array('Group.name != '=>'sub_user')));
             $this->set(compact('action','groups'));
         }
         

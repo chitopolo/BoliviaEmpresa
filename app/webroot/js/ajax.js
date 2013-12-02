@@ -15,51 +15,51 @@ $(document).ready(function(){
         });
 });                
 $(function(){
-	$('#regiscompany.dropdown').hover(function() {
+        $('#regiscompany.dropdown').hover(function() {
     $(this).find('.dropdown-menu').stop(true, true).show();
     $(this).addClass('open');
-}, 	function() {
-  	$(this).find('.dropdown-menu').stop(true, true).hide();
+},         function() {
+          $(this).find('.dropdown-menu').stop(true, true).hide();
     $(this).removeClass('open');
-	});
+        });
 });
 
 $(document).ready(function () {
-	$("#ola").bind("click", function (event) {
+        $("#ola").bind("click", function (event) {
             alert('ols');
 })});
 $(document).ready(function () {
-	$("#formItem").bind("submit", function (event) {
+        $("#formItem").bind("submit", function (event) {
             event.preventDefault();
-		$.ajax({
-			async:true, 
-			data:$("#formItem").serialize(), 
-			dataType:"html", 
-			success:function (data, textStatus) {
+                $.ajax({
+                        async:true, 
+                        data:$("#formItem").serialize(), 
+                        dataType:"html", 
+                        success:function (data, textStatus) {
                                
                                $("#itemsdiv").html(data);   
                                $('#ajax').remove();
                                 LoadJSajax();
                             },                                    
-			type:"post", 
-			url:"\/BoliviaEmpresa\/bolivia_companies\/companiesitems"
-		});
+                        type:"post", 
+                        url:"\/BoliviaEmpresa\/bolivia_companies\/companiesitems"
+                });
 });});
 //se hace la validacion correspondiente desde ajax en el modelo
 $(document).ready(function () {
-	$("#comitems").bind("submit", function (event) {
+        $("#comitems").bind("submit", function (event) {
             event.preventDefault();
-		$.ajax({
-			async:true, 
-			data:$("#comitems").serialize(), 
-			dataType:"html", 
-			success:function (data, textStatus) {                               
-				//$("#mm").html(data);                                
+                $.ajax({
+                        async:true, 
+                        data:$("#comitems").serialize(), 
+                        dataType:"html", 
+                        success:function (data, textStatus) {                               
+                                //$("#mm").html(data);                                
                                 //alert('companies item');
                          },                                    
-			type:"post", 
-			url:"\/BoliviaEmpresa\/bolivia_companies\/registercompaniesitems"
-		});
+                        type:"post", 
+                        url:"\/BoliviaEmpresa\/bolivia_companies\/registercompaniesitems"
+                });
 });});
 
 
@@ -70,31 +70,31 @@ $(document).click(function (event) {
 
 
 
-$(document).click(function (event) {    		
+$(document).click(function (event) {                    
      $('#brow.dropdown').find('.dropdown-menu').stop(true, true).hide();
      $('#brow.dropdown').removeClass('open')
 });
 
 $(document).ready(function () {
-	$("#bolivia_companiesBrowser").bind("keyup", function () {  
+        $("#bolivia_companiesBrowser").bind("keyup", function () {  
             $('#brow.dropdown').find('.dropdown-menu').stop(true, true).hide();
             $('#brow.dropdown').removeClass('open')
           
             var val = $(this).val();
              
-		$.ajax({
-			async:true, 
-			data:{id:'#bolivia_companiesBrowser',ul:'#browsers',value:val},  
-			dataType:"html", 
-			success:function (data, textStatus) {
-				$("#browsers").html(data);
+                $.ajax({
+                        async:true, 
+                        data:{id:'#bolivia_companiesBrowser',ul:'#browsers',value:val},  
+                        dataType:"html", 
+                        success:function (data, textStatus) {
+                                $("#browsers").html(data);
                                 $('#brow.dropdown').find('.dropdown-menu').stop(true, true).show();
                                 $('#brow.dropdown').addClass('open');
                         }, 
 
-			type:"post", 
-			url:"\/BoliviaEmpresa\/bolivia_companies\/tags"
-		});
+                        type:"post", 
+                        url:"\/BoliviaEmpresa\/bolivia_companies\/tags"
+                });
         });
 });
 
@@ -107,17 +107,17 @@ $(document).ready(function () {
 });
 });
 $(document).ready(function () {
-	$("#registercompanytag").bind("keyup", function (event) {
+        $("#registercompanytag").bind("keyup", function (event) {
               var val = $(this).val();
-		$.ajax({
-			async:true, 
-			data:{id:'#registercompanytag',ul:'#registertag',value:val}, 
-			dataType:"html", 
-			success:function (data, textStatus) {
-				$("#registertag").html(data);}, 
-			type:"post", 
-			url:"\/BoliviaEmpresa\/bolivia_companies\/tags"
-		});
+                $.ajax({
+                        async:true, 
+                        data:{id:'#registercompanytag',ul:'#registertag',value:val}, 
+                        dataType:"html", 
+                        success:function (data, textStatus) {
+                                $("#registertag").html(data);}, 
+                        type:"post", 
+                        url:"\/BoliviaEmpresa\/bolivia_companies\/tags"
+                });
 });});
 
  $("#pais").change(function() {
@@ -139,37 +139,37 @@ $(document).ready(function () {
            });      
 
 $(document).ready(function () {
-	$("#Category").bind("change", function () {
+        $("#Category").bind("change", function () {
             $("#Category option:selected").each(function() {
                  var val = $(this).val();
                 // alert(val);
                  $.ajax({
-			async:true, 
-			data: {category: val},   
-			dataType:"html", 
-			success:function (data, textStatus) {
+                        async:true, 
+                        data: {category: val},   
+                        dataType:"html", 
+                        success:function (data, textStatus) {
                         $("#SubCategorySubCategory").html(data); 
                             },                                    
-			type:"post", 
-			url:"\/BoliviaEmpresa\/bolivia_companies\/subcategories_option"
-		});
+                        type:"post", 
+                        url:"\/BoliviaEmpresa\/bolivia_companies\/subcategories_option"
+                });
          
 });});});
 
 $(document).ready(function () {
-	$("#CompanyRegistercompanyForm").bind("submit", function (event) {
+        $("#CompanyRegistercompanyForm").bind("submit", function (event) {
             event.preventDefault();
               if($('#registercompanytag').val()){
-		$.ajax({
-			async:true, 
-			data:$("#CompanyRegistercompanyForm").serialize(), 
-			dataType:"html", 
-			success:function (data, textStatus) {
-				$("#con1").html(data); 
+                $.ajax({
+                        async:true, 
+                        data:$("#CompanyRegistercompanyForm").serialize(), 
+                        dataType:"html", 
+                        success:function (data, textStatus) {
+                                $("#con1").html(data); 
                             },                                    
-			type:"post", 
-			url:"\/BoliviaEmpresa\/bolivia_companies\/registercompany"
-		});
+                        type:"post", 
+                        url:"\/BoliviaEmpresa\/bolivia_companies\/registercompany"
+                });
               }else{
                   alert('tienes que insertar por lo menos 1 tag');
               }
@@ -309,16 +309,16 @@ $(document).ready(function () {
     function eliminar_img(url,sname,remov,id){
         //
         $.ajax({
-			async:true, 
-			data:{dir:url,sname:sname,id:id}, 
-			dataType:"html", 
-			success:function (data, textStatus) {
-				$(remov).remove(); 
+                        async:true, 
+                        data:{dir:url,sname:sname,id:id}, 
+                        dataType:"html", 
+                        success:function (data, textStatus) {
+                                $(remov).remove(); 
                                 alert(remov);
                             },
-			type:"post", 
-			url:"\/BoliviaEmpresa\/bolivia_companies\/img_remove"
-		});
+                        type:"post", 
+                        url:"\/BoliviaEmpresa\/bolivia_companies\/img_remove"
+                });
     }
     function LoadJS() {
             var tagjs = document.createElement("script");
@@ -342,13 +342,13 @@ $(document).ready(function () {
     }
     //se usara para todos los forms q se piensan cargar
     function cargarForm(url,cont){
-		$.ajax({
-			async:true, 
-			//data:$(id).serialize(),
+                $.ajax({
+                        async:true, 
+                        //data:$(id).serialize(),
                         //revisar su antecesor y no el actual la primera ves
                         //eliminar solucion map.js 1 
-			dataType:"html", 
-			success:function (data, textStatus) {                               
+                        dataType:"html", 
+                        success:function (data, textStatus) {                               
                                
                                 $("#map1").remove();
                                 LoadJS();
@@ -356,21 +356,21 @@ $(document).ready(function () {
                                 $('#ajax').remove();
                                 LoadJSajax();  
                             },                                    
-			type:"get", 
-			url:url
-		});
+                        type:"get", 
+                        url:url
+                });
     }
-    function cargarFormSM(url,cont){		
-					$('.modal-body').load(url,function(){
-						$('#myModal').modal({show:true});
-					});					                                                            
+    function cargarFormSM(url,cont){                
+                                        $('.modal-body').load(url,function(){
+                                                $('#myModal').modal({show:true});
+                                        });                                                                                                    
                     $('#ajax').remove();
                     LoadJSajax(); 
     }
     function addressMap(lat,lng){
-    	var latt = lat;
-    	var lngg = lng;
-    	 $.ajax({
+            var latt = lat;
+            var lngg = lng;
+             $.ajax({
                            async:true, 
                            data:{lat:latt,lng:lngg}, 
                            dataType:"html", 
@@ -385,7 +385,7 @@ $(document).ready(function () {
     }
 
 $(document).ready(function () {
-	$("#BranchCityId").bind("change", function () {
+        $("#BranchCityId").bind("change", function () {
             $("#BranchCityId option:selected").each(function() {
                  var val = $(this).val();
                  if(val){
@@ -460,7 +460,5 @@ $(document).ready(function () {
                            url: $(this).attr("action")
                    });
                 
-            });
-        });     
-
-       
+    });
+});     

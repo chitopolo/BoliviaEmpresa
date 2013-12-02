@@ -1,6 +1,6 @@
 <section>
 		
-	<div class="container">
+<div class="container">
   <div class="row well">
   	<hr>
     <div class="span2">
