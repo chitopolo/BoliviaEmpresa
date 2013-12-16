@@ -669,7 +669,7 @@ class BoliviaCompaniesController extends AppController {
             
             
         }
-        public function registercompaniesitems(){
+        public function registerCompanyItems(){
     
          $this->loadModel('CompaniesItem');  
          $this->loadModel('Item');  
@@ -727,6 +727,58 @@ class BoliviaCompaniesController extends AppController {
             
         
         }
+        public function viewEditCompanyItems($id=null){
+            $this->loadModel('CompaniesItem');
+            if (!$this->CompaniesItem->exists($id)) {
+			throw new NotFoundException(__('Invalid companies item'));
+		}
+		if ($this->request->is(array('post', 'put'))) {
+			if ($this->CompaniesItem->save($this->request->data)) {
+				$this->Session->setFlash(__('The companies item has been saved.'));
+				return $this->redirect(array('action' => 'index'));
+			} else {
+				$this->Session->setFlash(__('The companies item could not be saved. Please, try again.'));
+			}
+		} else {
+			$options = array('conditions' => array('CompaniesItem.' . $this->CompaniesItem->primaryKey => $id));
+			$this->request->data = $this->CompaniesItem->find('first', $options);
+		}
+		$companies = $this->CompaniesItem->Company->find('list');
+		$items = $this->CompaniesItem->Item->find('list');
+		$this->set(compact('companies', 'items'));
+        }
+        public function registerCompanyItemImages($id=null){
+            $this->loadModel('CompaniesItem');
+            if ($this->request->is('post')) {
+			$this->CompaniesItemsImage->create();
+			if ($this->CompaniesItemsImage->save($this->request->data)) {
+				$this->Session->setFlash(__('The companies items image has been saved.'));
+				return $this->redirect(array('action' => 'index'));
+			} else {
+				$this->Session->setFlash(__('The companies items image could not be saved. Please, try again.'));
+			}
+		}		
+		$this->set(compact('id'));
+        }
+        public function viewEditCompanyItemImages($id=null){
+            $this->loadModel('CompaniesItemsImage');
+            if (!$this->CompaniesItemsImage->exists($id)) {
+			throw new NotFoundException(__('Invalid companies items image'));
+		}
+		if ($this->request->is(array('post', 'put'))) {
+			if ($this->CompaniesItemsImage->save($this->request->data)) {
+				$this->Session->setFlash(__('The companies items image has been saved.'));
+				return $this->redirect(array('action' => 'index'));
+			} else {
+				$this->Session->setFlash(__('The companies items image could not be saved. Please, try again.'));
+			}
+		} else {
+			$options = array('conditions' => array('CompaniesItemsImage.' . $this->CompaniesItemsImage->primaryKey => $id));
+			$this->request->data = $this->CompaniesItemsImage->find('first', $options);
+		}		
+		$this->set(compact(''));
+        }
+
         public function companiesitems(){
             $idcompany = $this->request->data['idcompany'];
             $this->loadModel('CompaniesItem');  
@@ -744,7 +796,7 @@ class BoliviaCompaniesController extends AppController {
            $this->layout = 'ajax';
         }
         
-        public function registercompany(){
+        public function registerCompany(){
             $this->loadModel('Company');
             $this->loadModel('Category');
             $this->loadModel('Tag');
@@ -794,7 +846,76 @@ class BoliviaCompaniesController extends AppController {
         $this->set(compact('categories', 'subCategories'));
                 
         }
+        
+        public function registerCompanyImage($id=null){
+            $this->loadModel('CompaniesImage');
+            
+            if ($this->request->is('post')) {
+			$this->CompaniesImage->create();
+			if ($this->CompaniesImage->save($this->request->data)) {
+				$this->Session->setFlash(__('The companies image has been saved.'));
+				return $this->redirect(array('action' => 'index'));
+			} else {
+				$this->Session->setFlash(__('The companies image could not be saved. Please, try again.'));
+			}
+		}		
+		$this->set(compact('id'));
+                
+        }
+        public function viewEditCompanyImage($id=null){
+            $this->loadModel('CompaniesImage');
+            
+            if (!$this->CompaniesImage->exists($id)) {
+			throw new NotFoundException(__('Invalid companies image'));
+		}
+		if ($this->request->is(array('post', 'put'))) {
+			if ($this->CompaniesImage->save($this->request->data)) {
+				$this->Session->setFlash(__('The companies image has been saved.'));
+				return $this->redirect(array('action' => 'index'));
+			} else {
+				$this->Session->setFlash(__('The companies image could not be saved. Please, try again.'));
+			}
+		} else {
+			$options = array('conditions' => array('CompaniesImage.' . $this->CompaniesImage->primaryKey => $id));
+			$this->request->data = $this->CompaniesImage->find('first', $options);
+		}		
+		//$this->set(compact());
+        }
+        public function registerCompanyTag($id=null){
+            
+            //cuando se aga la carga de los tag verificar q no se carguen los q ya 
+            // tienen realiacion con esta empresa
+            $this->loadModel('Tag');
+            $this->loadModel('CompaniesTag');
+            
+            if ($this->request->is('post')) {
+                    
+                     $tag = array_unique(explode(" ", $this->request->data['conpanytag']));   
+                     foreach ($tag as $val){
+                        $can = $this->Tag->find('count',array('conditions'=> array('Tag.name' => $val)));
+                        if($can==0){                        
+                            $this->Tag->create();
 
+                            if($this->Tag->save(array('Tag'=>array('id'=>null,'name'=>$val)))) {
+                                $this->Session->setFlash(__('El tag se a guardado'));               
+                            } 
+                        }
+                            $tag = $this->Tag->CompaiesTag->find('first',array('conditions'=> array('Tag.name' => $val)));
+                            $this->CompaniesTag->create();
+                           /* if ($this->CompaniesTag->save(array('CompaniesTag'=>array('tag'))$this->request->data['CompaniesTag']['company_id'])) {
+                                    $this->Session->setFlash(__('The companies tag has been saved.'));
+                                    return $this->redirect(array('action' => 'index'));
+                            } else {
+                                    $this->Session->setFlash(__('The companies tag could not be saved. Please, try again.'));
+                            }*/
+                    }
+                
+                    
+            }                      
+            $this->set(compact('id'));
+            
+                
+        }
         public function subcategories_option(){
             $this->loadModel('SubCategory');
             if ($this->request->is('post')) {
@@ -1015,7 +1136,7 @@ class BoliviaCompaniesController extends AppController {
             $this->set(compact('array','use'));
                 $this->layout = 'ajax';
         }
-        public function registeruser(){
+        public function registerUser(){
 
             $this->loadModel('User');
             $this->loadModel('Group');
@@ -1136,6 +1257,22 @@ class BoliviaCompaniesController extends AppController {
                 $this->layout = 'ajax';
                 
         }
+        public function  registerAd(){
+            $this->loadModel('Ad');
+            $this->loadModel('Company');
+            
+            if ($this->request->is('post')) {
+			$this->Ad->create();
+			if ($this->Ad->save($this->request->data)) {
+				$this->Session->setFlash(__('The ad has been saved.'));
+				return $this->redirect(array('action' => 'index'));
+			} else {
+				$this->Session->setFlash(__('The ad could not be saved. Please, try again.'));
+			}
+		}
+		$companies = $this->Company->find('list');
+		$this->set(compact('companies'));
+        }       
 
         public function ViewEditUser($id = null){
             $this->loadModel('User');
@@ -1168,6 +1305,47 @@ class BoliviaCompaniesController extends AppController {
         $this->set(compact('groups'));  
                 $this->layout = "ajax";
         }
+        public function remove($id=null,$table=null){
+            //loas q se van a eliminar por completo en us respectivo controlador 
+            
+            //a q estaran solo los q cambian su estado 
+            $this->loadModel('Company');
+            $this->loadModel('Branch');
+            $this->loadModel('Deal');
+            $this->loadModel('Ticket');
+            $this->loadModel('User');
+            $this->loadModel('Ad');
+            
+             switch ($table){
+                case 'Company':
+                   if (!$this->Company->exists($id)) {
+                            throw new NotFoundException(__('Invalid'));
+                    }                   
+                    if ($this->Gallery->save(array('Company'=>array('id'=>$id,'state'=>'inactive')))) {
+                            $this->Session->setFlash(__(' has been saved.'));
+                            return $this->redirect(array('action' => 'index'));
+                    } else {
+                            $this->Session->setFlash(__('not be edit. Please, try again.'));
+                    }
+                    break;
+                case 'Company':
+                   if (!$this->Company->exists($id)) {
+                            throw new NotFoundException(__('Invalid'));
+                    }                   
+                    if ($this->Gallery->save(array('Company'=>array('id'=>$id,'state'=>'inactive')))) {
+                            $this->Session->setFlash(__(' has been saved.'));
+                            return $this->redirect(array('action' => 'index'));
+                    } else {
+                            $this->Session->setFlash(__('not be edit. Please, try again.'));
+                    }
+                    break;
+             }
+           
+        }
+        
+        
+        
+        
         public function img_remove(){ 
              if ($this->request->is('post')) {
                 $dir = $this->request->data['dir'];

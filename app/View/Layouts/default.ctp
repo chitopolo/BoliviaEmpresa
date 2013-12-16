@@ -115,8 +115,9 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">login <b class="caret"></b></a>
                                                <div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
                                                     <div class="users form">                                            
-                                                        <?php                                                        
-                                                        echo $this->Form->create('User'); ?>
+                                                        <?php     
+                                                        //problemas si existe dos ide de dos formularios iguales
+                                                        echo $this->Form->create('loginuser'); ?>
                                                             <fieldset>                                                                
                                                                 <div class="row-fluid">
                                                                     <dvi  class="span2" style="text-align: center;">                                                                         
@@ -156,6 +157,22 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
                 </div>
                      
                 <div id="content">
+
+                    
+                                <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog">
+                                        <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal">×</button>
+                                                        <h3>Modal header</h3>
+                                        </div>
+                                        <div class="modal-body">
+                                                <p>My modal content here…</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                                <button class="btn" data-dismiss="modal">Close</button>
+                                        </div>
+                                </div>
+
+
 
                     
                         <?php echo $this->Session->flash(); ?>
@@ -229,7 +246,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
         <?php echo $this->fetch('scriptBottom'); ?>
         <?php  echo $this->element('sql_dump'); ?>        
         <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>                         
-
+        <?php echo $this->Js->writeBuffer(); ?>
 </body>
 
 </html>

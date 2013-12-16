@@ -3,7 +3,7 @@
  * and open the template in the editor.
 
  */
-
+//location.reload();
 $(document).ready(function(){
         // Fancybox galllery
         $("a.js-fancybox").fancybox({
@@ -175,7 +175,7 @@ $(document).ready(function () {
               }
 });});
 
-$(document).ready(function () {
+/*$(document).ready(function () {
     
           $('#UserRegisteruserForm').bind("submit",function(event) {
           event.preventDefault();
@@ -191,10 +191,10 @@ $(document).ready(function () {
             url:"\/BoliviaEmpresa\/bolivia_companies\/registeruser"
               });   
           }else{
-              alert('por lo menos 1 tipo de usu');
+              alert('seleccione por lo menos 1 tipo de usu');
           }
          
-});});    
+});}); */   
 
 $(document).ready(function () {
     
@@ -360,10 +360,9 @@ $(document).ready(function () {
                         url:url
                 });
     }
-    function cargarFormSM(url,id){                
-                    $(id).load(url,function(){
-                            //$('#myModal').modal({show:true});
-                    });                                                                                                    
+    function cargarFormSM(url,cont){                
+                                        $('#'+cont).load(url,function(){                                                
+                                        });                                                                                                    
                     $('#ajax').remove();
                     LoadJSajax(); 
     }
@@ -460,5 +459,5 @@ $(document).ready(function () {
                            url: $(this).attr("action")
                    });
                 
-    });
-});     
+            });
+        });     

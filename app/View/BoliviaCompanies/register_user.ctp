@@ -17,7 +17,7 @@
                 echo $this->FormEnum->input('dir', array('type' => 'hidden','default'=>'user/filename'));
                 ?>
                 
-                <div id="user"></div>
+                <div id="user"></div>                
                 <input type="file" id="img" class="imgg" name="user" style="display: none"  onchange="subir_img('img','uno');">
                 <input type="hidden" id="dir" value="/img/user/filename" >
                 <div class="input-append">                     
@@ -34,7 +34,9 @@
 <?php echo $this->Form->end(__('Siguiente')); ?>
 </div>
 
-<?php $this->Js->get('#UserRegisteruserForm')->event(
+<?php 
+/*
+$this->Js->get('#UserRegisteruserForm')->event(
 'submit',
 $this->Js->request(
 array('controller' => 'bolivia_companies', 'action' => 'registeruser'),
@@ -46,4 +48,4 @@ array(
 'data' => $this->Js->serializeForm(array('isForm' => true, 'inline' => true))
 )
 )
-); ?>
+);*/ ?>
