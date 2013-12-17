@@ -190,7 +190,7 @@ class BoliviaCompaniesController extends AppController {
         public function perfilusers(){
 
         }
-          public function registerConsultation(){
+        public function registerConsultation(){
               $this->loadModel('Consultation');
               if ($this->request->is('post')) {
                   //$id_grup_user ='session';
@@ -207,20 +207,57 @@ class BoliviaCompaniesController extends AppController {
               $this->loadModel('Consultation');
               if (!$this->Consultation->exists($id)) {
             throw new NotFoundException(__('Invalid consultation'));
-        }
-        if ($this->request->is(array('post', 'put'))) {
-            if ($this->Consultation->save($this->request->data)) {
-                $this->Session->setFlash(__('La consulta no a sido editada'));
-                //return $this->redirect(array('action' => 'index'));
-            } else {
-                $this->Session->setFlash(__('La consulta a sido editada'));
-            }
-        } 
-                $options = array('conditions' => array('Consultation.' . $this->Consultation->primaryKey => $id));
-                $this->request->data = $this->Consultation->find('first', $options);        
-        $this->set(compact());    
+                }
+                if ($this->request->is(array('post', 'put'))) {
+                    if ($this->Consultation->save($this->request->data)) {
+                        $this->Session->setFlash(__('La consulta no a sido editada'));
+                        //return $this->redirect(array('action' => 'index'));
+                    } else {
+                        $this->Session->setFlash(__('La consulta a sido editada'));
+                    }
+                } 
+                        $options = array('conditions' => array('Consultation.' . $this->Consultation->primaryKey => $id));
+                        $this->request->data = $this->Consultation->find('first', $options);        
+            ///$this->set(compact());    
           
           }
+          
+          public function registerGroup(){
+              $this->loadModel('Group');
+              if ($this->request->is('post')) {
+			$this->Group->create();
+			if ($this->Group->save($this->request->data)) {
+				$this->Session->setFlash(__('The group has been saved.'));
+				return $this->redirect(array('action' => 'index'));
+			} else {
+				$this->Session->setFlash(__('The group could not be saved. Please, try again.'));
+			}
+		}
+		//$users = $this->Group->User->find('list');
+		//$this->set(compact('users'));
+              
+          }
+          
+          public  function viewEditGroup($id = null){
+              $this->loadModel('Group');
+              if (!$this->Group->exists($id)) {
+			throw new NotFoundException(__('Invalid group'));
+		}
+		if ($this->request->is(array('post', 'put'))) {
+			if ($this->Group->save($this->request->data)) {
+				$this->Session->setFlash(__('The group has been saved.'));
+				return $this->redirect(array('action' => 'index'));
+			} else {
+				$this->Session->setFlash(__('The group could not be saved. Please, try again.'));
+			}
+		} else {
+			$options = array('conditions' => array('Group.' . $this->Group->primaryKey => $id));
+			$this->request->data = $this->Group->find('first', $options);
+		}
+		
+          }
+
+          
           public function perfilSub_users(){
             $this->loadModel('GroupsUser');   
             $this->loadModel('Deal');   
@@ -862,6 +899,25 @@ class BoliviaCompaniesController extends AppController {
 		$this->set(compact('id'));
                 
         }
+        
+        public function registerSubCategories(){
+            $this->loadModel('SubCategory');
+            $this->loadModel('Category');
+            if ($this->request->is('post')) {
+			$this->SubCategory->create();
+			if ($this->SubCategory->save($this->request->data)) {
+				$this->Session->setFlash(__('The sub category has been saved.'));
+				return $this->redirect(array('action' => 'index'));
+			} else {
+				$this->Session->setFlash(__('The sub category could not be saved. Please, try again.'));
+			}
+		}
+		$categories = $this->Category->find('list');
+                
+		$this->set(compact('categories'));
+        }
+
+
         public function viewEditCompanyImage($id=null){
             $this->loadModel('CompaniesImage');
             
@@ -882,9 +938,6 @@ class BoliviaCompaniesController extends AppController {
 		//$this->set(compact());
         }
         public function registerCompanyTag($id=null){
-            
-            //cuando se aga la carga de los tag verificar q no se carguen los q ya 
-            // tienen realiacion con esta empresa
             $this->loadModel('Tag');
             $this->loadModel('CompaniesTag');
             
@@ -902,12 +955,12 @@ class BoliviaCompaniesController extends AppController {
                         }
                             $tag = $this->Tag->CompaiesTag->find('first',array('conditions'=> array('Tag.name' => $val)));
                             $this->CompaniesTag->create();
-                           /* if ($this->CompaniesTag->save(array('CompaniesTag'=>array('tag'))$this->request->data['CompaniesTag']['company_id'])) {
+                            if ($this->CompaniesTag->save(array('CompaniesTag'=>array('company_id'=>$this->request->data['CompaniesTag']['company_id'],'tag_id'=>$tag['Tag']['id'])))) {
                                     $this->Session->setFlash(__('The companies tag has been saved.'));
                                     return $this->redirect(array('action' => 'index'));
                             } else {
                                     $this->Session->setFlash(__('The companies tag could not be saved. Please, try again.'));
-                            }*/
+                            }
                     }
                 
                     
