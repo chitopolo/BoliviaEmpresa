@@ -1,5 +1,5 @@
 <div class="companiesItemsImages form">
-<?php echo $this->Form->create('CompaniesItemsImage'); ?>
+<?php echo $this->Form->create('CompaniesItemsImage',array('type'=>'file')); ?>
 	<fieldset>
 		<legend><?php echo __('Edit Companies Items Image'); ?></legend>
 	<?php

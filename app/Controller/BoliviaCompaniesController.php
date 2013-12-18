@@ -445,14 +445,25 @@ class BoliviaCompaniesController extends AppController {
         }
 
         public function tags(){
-          
+            $this->loadModel('Tag');
             $text = explode(" ", $this->request->data['value']);
             $val = $text[count($text)-1];
             
            $id = $this->request->data['id'];
            $ul = $this->request->data['ul'];
-           $this->loadModel('Tag');
            $datos = $this->Tag->find('all',array('conditions'=>array('Tag.name like' => '%'.$val.'%','Tag.name !='=>$text)));
+           $this->set(compact('datos','ul','text','id')); 
+
+           $this->layout = 'ajax';
+        }
+        public function item(){
+            $this->loadModel('Item');
+            $text = explode(" ", $this->request->data['value']);
+            $val = $text[count($text)-1];
+            
+           $id = $this->request->data['id'];
+           $ul = $this->request->data['ul'];
+           $datos = $this->Item->find('all',array('conditions'=>array('Item.name like' => '%'.$val.'%','Item.name !='=>$text)));
            $this->set(compact('datos','ul','text','id')); 
 
            $this->layout = 'ajax';
@@ -679,17 +690,18 @@ class BoliviaCompaniesController extends AppController {
                  
 
         }
-        public function ViewEditCompaniesitems($id=null){
+        public function viewEditCompanyItem($id=null){
             $this->loadModel('CompaniesItem');  
             $this->loadModel('Item');
             $this->loadModel('CompaniesItemsImage');  
             
-            
+            //implmentar el buscador items 
             
            if (!$this->CompaniesItem->exists($id)) {
             throw new NotFoundException(__('Invalid companies item'));
         }
         if ($this->request->is(array('post', 'put'))) {
+            //validar si el item existe 
             if ($this->CompaniesItem->save($this->request->data)) {
                 $this->Session->setFlash(__('The companies item has been saved.'));
                 return $this->redirect(array('action' => 'index'));
@@ -701,7 +713,7 @@ class BoliviaCompaniesController extends AppController {
             $this->request->data = $this->CompaniesItem->find('first', $options);
         }
         
-        $items = $this->CompaniesItem->Item->find('list');
+        $items = $this->Item->find('list');
         $this->set(compact('companies', 'items'));
             
             

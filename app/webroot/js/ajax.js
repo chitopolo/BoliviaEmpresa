@@ -61,8 +61,46 @@ $(document).ready(function () {
                         url:"\/BoliviaEmpresa\/bolivia_companies\/registercompaniesitems"
                 });
 });});
+/*Buscador Item*/
+$(document).click(function (event) {      
+     $('.dropdown').find('.dropdown-menu').stop(true, true).hide();
+     $('.dropdown').removeClass('open')
+});   function keyItem(id){
+               $('#brow'+id+'.dropdown').find('.dropdown-menu').stop(true, true).hide();
+               $('#brow'+id+'.dropdown').removeClass('open');
+           
+            var val = $('#BrowserItem'+id).val();
+            
+                $.ajax({
+                        async:true, 
+                        data:{id:'#BrowserItem'+id,ul:'#browsers'+id,value:val},  
+                        dataType:"html", 
+                        success:function (data, textStatus) {
+                                $("#browsers"+id).html(data);
+                                $('#brow'+id+'.dropdown').find('.dropdown-menu').stop(true, true).show();
+                                $('#brow'+id+'.dropdown').addClass('open');
+                                
+                        }, 
 
+                        type:"post", 
+                        url:"\/BoliviaEmpresa\/bolivia_companies\/item"
+                });  
+            }
+$(document).ready(function () {
+    
+        
+         
+});
 
+function browserItem(id){
+             $('#brow'+id+'.dropdown').find('.dropdown-menu').stop(true, true).show();
+             $('#brow'+id+'.dropdown').addClass('open');    
+        }
+$(document).ready(function () {
+ 
+        
+});
+/*Buscador Tag*/
 $(document).click(function (event) {      
      $('#brow.dropdown').find('.dropdown-menu').stop(true, true).hide();
      $('#brow.dropdown').removeClass('open')
@@ -106,6 +144,8 @@ $(document).ready(function () {
                  
 });
 });
+
+/* fin buscador tag*/
 $(document).ready(function () {
         $("#registercompanytag").bind("keyup", function (event) {
               var val = $(this).val();

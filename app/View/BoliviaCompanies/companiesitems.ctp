@@ -34,4 +34,22 @@
                     <?php echo $this->Form->input('company_id',array('type'=>'hidden','default'=>'3')); ?>
             </fieldset> 
 </div>
+
+
 <?php echo $this->Form->end(__('Submit')); ?>
+<!-- -->
+
+<!--
+<?php //for ($index = 0; $index < 3; $index++) {?>
+    <div id="brow<?//$index?>" class="dropdown">
+        <input name="conpanytag" class="dropdown-toggle input-large" data-toggle="dropdown" placeholder="¿Que busca?" autocomplete="on" autocorrect="on" spellcheck="true" type="text" id="BrowserItem<?=$index?>" onkeyup="keyItem(<?=$index?>)" onfocus="browserItem(<?=$index?>)"> 
+        <ul class="dropdown-menu" id="ulDropdown">
+            <li>
+                <ul id="browsers<?$index?>">
+
+                </ul>
+            </li>
+        </ul>
+   </div>
+<?php //} ?> -->
+

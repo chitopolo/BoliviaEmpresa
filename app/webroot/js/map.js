@@ -17,11 +17,11 @@
 			var markerOptions = {
 				map: map,
 				position: myLatlng,
-				animation:  google.maps.Animation.BOUNCE		
+				animation:  google.maps.Animation.DROP		
 			};
 			marker_1 = createMarker(markerOptions);
 			
-			marker_1.set("content", "<a href=\"/BoliviaEmpresa/bolivia_companies/perfilCompany/2\">Adquirir cupon</a><div id='izquierda' class='span12'> <h3>Sucursal</h3><ul class='nav nav-tabs'><li class='active'><a href='#Su' data-toggle = 'tab'>Sucursal</a></li><li><a href='#De' data-toggle = 'tab'>Tickes</a></li></ul></div><div class='tab-content span12'><div class='tab-pane active' id='Su'><section class='block-large bg-alt'><div class='container'><div class='row'><div class='span3'></div><div class='span9'><h2> sucursal1</h2><h4>Direccion:</h4><p class='lead'> comidaspollo </p><h4>Telefono:</h4><p class='lead'> 4567843</p><h4>Correo:</h4><p class='lead'> gusgus@hotmail.com</p><h4>Fecha de creacion:</h4><p class='lead'> 2013-10-08 12:16:56</p><!-- <a href='#' class='btn btn-large btn-primary'>Contact Us!</a> --><h4>Descripcion:</h4><p class='lead'> </p></div></div></div></section></div><div class='tab-pane active' id='De'><ul class='thumbnails portfolio'><li class='span3 cat-1'><div class='thumbnail'><img src=\"/BoliviaEmpresa/img/deal/filename/big_t_umb.jpg\" alt=\"Promocion\" /><div class='caption'><h2><a href=\"/BoliviaEmpresa/bolivia_companies/perfilCompany/2\">negocio</a></h2><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute</p><h5>La promocion expira en:</h5><p>2013-10-08 16:14:00</p><h5>Tickest Disponibles</h5><p>2</p><h5>Tickest Canjeados</h5><p>0</p><div id='cupon'><a href=\"/BoliviaEmpresa/bolivia_companies/perfilCompany/2\">Adquirir cupon</a></div></div></div></li><li class='span3 cat-1'><div class='thumbnail'><img src=\"/BoliviaEmpresa/img/deal/filename/Real_Madrid_png_logo.png\" alt=\"Promocion\" /><div class='caption'><h2><a href=\"/BoliviaEmpresa/bolivia_companies/perfilCompany/2\">negocio2</a></h2><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis </p><h5>La promocion expira en:</h5><p>2013-10-08 16:27:00</p><h5>Tickest Disponibles</h5><p>0</p><h5>Tickest Canjeados</h5><p>2</p><div id='cupon'>No hay tickets por el Momento intente mas tarde</div></div></div></li></ul></div></div>");
+			marker_1.set("content", "<ul class='thumbnails portfolio'><li class='span3 cat-1'><div class='thumbnail'><a class='js-fancybox' rel='album' href='/BoliviaEmpresa/img/Boliviaempresa.jpg'><img src='/BoliviaEmpresa/img/Boliviaempresa.jpg' alt=''></a><div class='caption'><h5>Project Name</h5><p>Description for this project</p></div></div></li><li class='span3 cat-2'><div class='thumbnail'><a class='js-fancybox' rel='album' href='/BoliviaEmpresa/img/Boliviaempresa.jpg'><img src='/BoliviaEmpresa/img/Boliviaempresa.jpg' alt=''></a><div class='caption'><h5>Project Name</h5><p>Description for this project</p></div></div></li><li class='span3 cat-3'><div class='thumbnail'><a class='js-fancybox' rel='album' href='/BoliviaEmpresa/img/Boliviaempresa.jpg'><img src='/BoliviaEmpresa/img/Boliviaempresa.jpg' alt=''></a><div class='caption'><h5>Project Name</h5><p>Description for this project</p></div></div></li><li class='span3 cat-2'><div class='thumbnail'><a class='js-fancybox' rel='album' href='/BoliviaEmpresa/img/Boliviaempresa.jpg'><img src='/BoliviaEmpresa/img/Boliviaempresa.jpg' alt=''></a><div class='caption'><h5>Project Name</h5><p>Description for this project</p></div></div></li></ul>");
 			
 			google.maps.event.addListener(marker_1, "click", function(event) {
 				iw.setContent(this.get("content"));
@@ -34,13 +34,115 @@
 			var markerOptions = {
 				map: map,
 				position: myLatlng,
-				animation:  google.maps.Animation.BOUNCE		
+				animation:  google.maps.Animation.DROP		
 			};
 			marker_2 = createMarker(markerOptions);
 			
-			marker_2.set("content", "<a href=\"/BoliviaEmpresa/bolivia_companies/perfilCompany/2\">Adquirir cupon</a><div id='izquierda' class='span12'> <h3>Sucursal</h3><ul class='nav nav-tabs'><li class='active'><a href='#Su' data-toggle = 'tab'>Sucursal</a></li><li><a href='#De' data-toggle = 'tab'>Tickes</a></li></ul></div><div class='tab-content span12'><div class='tab-pane active' id='Su'><section class='block-large bg-alt'><div class='container'><div class='row'><div class='span3'></div><div class='span9'><h2> sucrsal2</h2><h4>Direccion:</h4><p class='lead'> Av. espaÃ±a 345 </p><h4>Telefono:</h4><p class='lead'> 4456376</p><h4>Correo:</h4><p class='lead'> Jm@hotmail.com</p><h4>Fecha de creacion:</h4><p class='lead'> 2013-10-08 16:49:02</p><!-- <a href='#' class='btn btn-large btn-primary'>Contact Us!</a> --><h4>Descripcion:</h4><p class='lead'> </p></div></div></div></section></div><div class='tab-pane active' id='De'><ul class='thumbnails portfolio'></ul></div></div>");
+			marker_2.set("content", "<ul class='thumbnails portfolio'><li class='span3 cat-1'><div class='thumbnail'><a class='js-fancybox' rel='album' href='/BoliviaEmpresa/img/Boliviaempresa.jpg'><img src='/BoliviaEmpresa/img/Boliviaempresa.jpg' alt=''></a><div class='caption'><h5>Project Name</h5><p>Description for this project</p></div></div></li><li class='span3 cat-2'><div class='thumbnail'><a class='js-fancybox' rel='album' href='/BoliviaEmpresa/img/Boliviaempresa.jpg'><img src='/BoliviaEmpresa/img/Boliviaempresa.jpg' alt=''></a><div class='caption'><h5>Project Name</h5><p>Description for this project</p></div></div></li><li class='span3 cat-3'><div class='thumbnail'><a class='js-fancybox' rel='album' href='/BoliviaEmpresa/img/Boliviaempresa.jpg'><img src='/BoliviaEmpresa/img/Boliviaempresa.jpg' alt=''></a><div class='caption'><h5>Project Name</h5><p>Description for this project</p></div></div></li><li class='span3 cat-2'><div class='thumbnail'><a class='js-fancybox' rel='album' href='/BoliviaEmpresa/img/Boliviaempresa.jpg'><img src='/BoliviaEmpresa/img/Boliviaempresa.jpg' alt=''></a><div class='caption'><h5>Project Name</h5><p>Description for this project</p></div></div></li></ul>");
 			
 			google.maps.event.addListener(marker_2, "click", function(event) {
+				iw.setContent(this.get("content"));
+				iw.open(map, this);
+			
+			});
+			
+			var myLatlng = new google.maps.LatLng(-17.38413232091801,-66.16693669328879);
+				
+			var markerOptions = {
+				map: map,
+				position: myLatlng,
+				animation:  google.maps.Animation.DROP		
+			};
+			marker_4 = createMarker(markerOptions);
+			
+			marker_4.set("content", "<ul class='thumbnails portfolio'><li class='span3 cat-1'><div class='thumbnail'><a class='js-fancybox' rel='album' href='/BoliviaEmpresa/img/Boliviaempresa.jpg'><img src='/BoliviaEmpresa/img/Boliviaempresa.jpg' alt=''></a><div class='caption'><h5>Project Name</h5><p>Description for this project</p></div></div></li><li class='span3 cat-2'><div class='thumbnail'><a class='js-fancybox' rel='album' href='/BoliviaEmpresa/img/Boliviaempresa.jpg'><img src='/BoliviaEmpresa/img/Boliviaempresa.jpg' alt=''></a><div class='caption'><h5>Project Name</h5><p>Description for this project</p></div></div></li><li class='span3 cat-3'><div class='thumbnail'><a class='js-fancybox' rel='album' href='/BoliviaEmpresa/img/Boliviaempresa.jpg'><img src='/BoliviaEmpresa/img/Boliviaempresa.jpg' alt=''></a><div class='caption'><h5>Project Name</h5><p>Description for this project</p></div></div></li><li class='span3 cat-2'><div class='thumbnail'><a class='js-fancybox' rel='album' href='/BoliviaEmpresa/img/Boliviaempresa.jpg'><img src='/BoliviaEmpresa/img/Boliviaempresa.jpg' alt=''></a><div class='caption'><h5>Project Name</h5><p>Description for this project</p></div></div></li></ul>");
+			
+			google.maps.event.addListener(marker_4, "click", function(event) {
+				iw.setContent(this.get("content"));
+				iw.open(map, this);
+			
+			});
+			
+			var myLatlng = new google.maps.LatLng(-17.38413232091801,-66.16693669328879);
+				
+			var markerOptions = {
+				map: map,
+				position: myLatlng,
+				animation:  google.maps.Animation.DROP		
+			};
+			marker_5 = createMarker(markerOptions);
+			
+			marker_5.set("content", "<ul class='thumbnails portfolio'><li class='span3 cat-1'><div class='thumbnail'><a class='js-fancybox' rel='album' href='/BoliviaEmpresa/img/Boliviaempresa.jpg'><img src='/BoliviaEmpresa/img/Boliviaempresa.jpg' alt=''></a><div class='caption'><h5>Project Name</h5><p>Description for this project</p></div></div></li><li class='span3 cat-2'><div class='thumbnail'><a class='js-fancybox' rel='album' href='/BoliviaEmpresa/img/Boliviaempresa.jpg'><img src='/BoliviaEmpresa/img/Boliviaempresa.jpg' alt=''></a><div class='caption'><h5>Project Name</h5><p>Description for this project</p></div></div></li><li class='span3 cat-3'><div class='thumbnail'><a class='js-fancybox' rel='album' href='/BoliviaEmpresa/img/Boliviaempresa.jpg'><img src='/BoliviaEmpresa/img/Boliviaempresa.jpg' alt=''></a><div class='caption'><h5>Project Name</h5><p>Description for this project</p></div></div></li><li class='span3 cat-2'><div class='thumbnail'><a class='js-fancybox' rel='album' href='/BoliviaEmpresa/img/Boliviaempresa.jpg'><img src='/BoliviaEmpresa/img/Boliviaempresa.jpg' alt=''></a><div class='caption'><h5>Project Name</h5><p>Description for this project</p></div></div></li></ul>");
+			
+			google.maps.event.addListener(marker_5, "click", function(event) {
+				iw.setContent(this.get("content"));
+				iw.open(map, this);
+			
+			});
+			
+			var myLatlng = new google.maps.LatLng(-17.38413232091801,-66.16693669328879);
+				
+			var markerOptions = {
+				map: map,
+				position: myLatlng,
+				animation:  google.maps.Animation.DROP		
+			};
+			marker_6 = createMarker(markerOptions);
+			
+			marker_6.set("content", "<ul class='thumbnails portfolio'><li class='span3 cat-1'><div class='thumbnail'><a class='js-fancybox' rel='album' href='/BoliviaEmpresa/img/Boliviaempresa.jpg'><img src='/BoliviaEmpresa/img/Boliviaempresa.jpg' alt=''></a><div class='caption'><h5>Project Name</h5><p>Description for this project</p></div></div></li><li class='span3 cat-2'><div class='thumbnail'><a class='js-fancybox' rel='album' href='/BoliviaEmpresa/img/Boliviaempresa.jpg'><img src='/BoliviaEmpresa/img/Boliviaempresa.jpg' alt=''></a><div class='caption'><h5>Project Name</h5><p>Description for this project</p></div></div></li><li class='span3 cat-3'><div class='thumbnail'><a class='js-fancybox' rel='album' href='/BoliviaEmpresa/img/Boliviaempresa.jpg'><img src='/BoliviaEmpresa/img/Boliviaempresa.jpg' alt=''></a><div class='caption'><h5>Project Name</h5><p>Description for this project</p></div></div></li><li class='span3 cat-2'><div class='thumbnail'><a class='js-fancybox' rel='album' href='/BoliviaEmpresa/img/Boliviaempresa.jpg'><img src='/BoliviaEmpresa/img/Boliviaempresa.jpg' alt=''></a><div class='caption'><h5>Project Name</h5><p>Description for this project</p></div></div></li></ul>");
+			
+			google.maps.event.addListener(marker_6, "click", function(event) {
+				iw.setContent(this.get("content"));
+				iw.open(map, this);
+			
+			});
+			
+			var myLatlng = new google.maps.LatLng(-16.498937247537533,-68.1464263668995);
+				
+			var markerOptions = {
+				map: map,
+				position: myLatlng,
+				animation:  google.maps.Animation.DROP		
+			};
+			marker_7 = createMarker(markerOptions);
+			
+			marker_7.set("content", "<ul class='thumbnails portfolio'><li class='span3 cat-1'><div class='thumbnail'><a class='js-fancybox' rel='album' href='/BoliviaEmpresa/img/Boliviaempresa.jpg'><img src='/BoliviaEmpresa/img/Boliviaempresa.jpg' alt=''></a><div class='caption'><h5>Project Name</h5><p>Description for this project</p></div></div></li><li class='span3 cat-2'><div class='thumbnail'><a class='js-fancybox' rel='album' href='/BoliviaEmpresa/img/Boliviaempresa.jpg'><img src='/BoliviaEmpresa/img/Boliviaempresa.jpg' alt=''></a><div class='caption'><h5>Project Name</h5><p>Description for this project</p></div></div></li><li class='span3 cat-3'><div class='thumbnail'><a class='js-fancybox' rel='album' href='/BoliviaEmpresa/img/Boliviaempresa.jpg'><img src='/BoliviaEmpresa/img/Boliviaempresa.jpg' alt=''></a><div class='caption'><h5>Project Name</h5><p>Description for this project</p></div></div></li><li class='span3 cat-2'><div class='thumbnail'><a class='js-fancybox' rel='album' href='/BoliviaEmpresa/img/Boliviaempresa.jpg'><img src='/BoliviaEmpresa/img/Boliviaempresa.jpg' alt=''></a><div class='caption'><h5>Project Name</h5><p>Description for this project</p></div></div></li></ul>");
+			
+			google.maps.event.addListener(marker_7, "click", function(event) {
+				iw.setContent(this.get("content"));
+				iw.open(map, this);
+			
+			});
+			
+			var myLatlng = new google.maps.LatLng(-17.381436943239027,-66.16816112170409);
+				
+			var markerOptions = {
+				map: map,
+				position: myLatlng,
+				animation:  google.maps.Animation.DROP		
+			};
+			marker_8 = createMarker(markerOptions);
+			
+			marker_8.set("content", "<ul class='thumbnails portfolio'><li class='span3 cat-1'><div class='thumbnail'><a class='js-fancybox' rel='album' href='/BoliviaEmpresa/img/Boliviaempresa.jpg'><img src='/BoliviaEmpresa/img/Boliviaempresa.jpg' alt=''></a><div class='caption'><h5>Project Name</h5><p>Description for this project</p></div></div></li><li class='span3 cat-2'><div class='thumbnail'><a class='js-fancybox' rel='album' href='/BoliviaEmpresa/img/Boliviaempresa.jpg'><img src='/BoliviaEmpresa/img/Boliviaempresa.jpg' alt=''></a><div class='caption'><h5>Project Name</h5><p>Description for this project</p></div></div></li><li class='span3 cat-3'><div class='thumbnail'><a class='js-fancybox' rel='album' href='/BoliviaEmpresa/img/Boliviaempresa.jpg'><img src='/BoliviaEmpresa/img/Boliviaempresa.jpg' alt=''></a><div class='caption'><h5>Project Name</h5><p>Description for this project</p></div></div></li><li class='span3 cat-2'><div class='thumbnail'><a class='js-fancybox' rel='album' href='/BoliviaEmpresa/img/Boliviaempresa.jpg'><img src='/BoliviaEmpresa/img/Boliviaempresa.jpg' alt=''></a><div class='caption'><h5>Project Name</h5><p>Description for this project</p></div></div></li></ul>");
+			
+			google.maps.event.addListener(marker_8, "click", function(event) {
+				iw.setContent(this.get("content"));
+				iw.open(map, this);
+			
+			});
+			
+			var myLatlng = new google.maps.LatLng(-17.383938423991257,-66.16677911350916);
+				
+			var markerOptions = {
+				map: map,
+				position: myLatlng,
+				animation:  google.maps.Animation.DROP		
+			};
+			marker_9 = createMarker(markerOptions);
+			
+			marker_9.set("content", "<ul class='thumbnails portfolio'><li class='span3 cat-1'><div class='thumbnail'><a class='js-fancybox' rel='album' href='/BoliviaEmpresa/img/Boliviaempresa.jpg'><img src='/BoliviaEmpresa/img/Boliviaempresa.jpg' alt=''></a><div class='caption'><h5>Project Name</h5><p>Description for this project</p></div></div></li><li class='span3 cat-2'><div class='thumbnail'><a class='js-fancybox' rel='album' href='/BoliviaEmpresa/img/Boliviaempresa.jpg'><img src='/BoliviaEmpresa/img/Boliviaempresa.jpg' alt=''></a><div class='caption'><h5>Project Name</h5><p>Description for this project</p></div></div></li><li class='span3 cat-3'><div class='thumbnail'><a class='js-fancybox' rel='album' href='/BoliviaEmpresa/img/Boliviaempresa.jpg'><img src='/BoliviaEmpresa/img/Boliviaempresa.jpg' alt=''></a><div class='caption'><h5>Project Name</h5><p>Description for this project</p></div></div></li><li class='span3 cat-2'><div class='thumbnail'><a class='js-fancybox' rel='album' href='/BoliviaEmpresa/img/Boliviaempresa.jpg'><img src='/BoliviaEmpresa/img/Boliviaempresa.jpg' alt=''></a><div class='caption'><h5>Project Name</h5><p>Description for this project</p></div></div></li></ul>");
+			
+			google.maps.event.addListener(marker_9, "click", function(event) {
 				iw.setContent(this.get("content"));
 				iw.open(map, this);
 			
